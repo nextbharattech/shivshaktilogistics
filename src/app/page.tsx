@@ -72,13 +72,12 @@ export default function HomePage() {
 
           <h2 className="text-3xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Wherever your business needs to go, <br />
-            <span className="text-orange-600">
-              we're built to move it.
-            </span>
+            <span className="text-orange-600">we're built to move it.</span>
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Eliminate transit blind spots, reduce logistics costs, and partner with a team dedicated to punctuality and cargo security.
+            Eliminate transit blind spots, reduce logistics costs, and partner
+            with a team dedicated to punctuality and cargo security.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
