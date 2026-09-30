@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function QuotePage() {
   return (
     <div className="pt-24 pb-20 bg-slate-50 text-slate-900 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="p-4 rounded-2xl bg-orange-50 border border-orange-200 text-xs flex flex-wrap items-center justify-between gap-4 font-mono">
           <div className="flex items-center gap-2 text-orange-800 font-semibold">
             <Clock className="w-4 h-4 text-orange-600" />
@@ -27,7 +27,7 @@ export default function QuotePage() {
             <span>Direct Commercial Line: {COMPANY.contact.phone}</span>
           </a>
         </div>
-      </div>
+      </div> */}
 
       <QuoteCalculator isStandalonePage={true} />
     </div>

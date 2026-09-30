@@ -26,7 +26,10 @@ export const Footer: React.FC = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-slate-200 font-mono">
-              Operational Status: <strong className="text-emerald-400">All Gateways & Corridors Active</strong>
+              Operational Status:{" "}
+              <strong className="text-emerald-400">
+                All Gateways & Corridors Active
+              </strong>
             </span>
             <span className="hidden md:inline-block text-slate-600">|</span>
             <span className="hidden md:inline-block text-slate-300 font-mono">
@@ -59,7 +62,9 @@ export const Footer: React.FC = () => {
               <div className="flex items-start gap-2.5 text-slate-300">
                 <MapPin className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
                 <span>
-                  {COMPANY.headquarters.address}, {COMPANY.headquarters.city}, {COMPANY.headquarters.state} - {COMPANY.headquarters.postalCode}
+                  {COMPANY.headquarters.address}, {COMPANY.headquarters.city},{" "}
+                  {COMPANY.headquarters.state} -{" "}
+                  {COMPANY.headquarters.postalCode}
                 </span>
               </div>
               <div className="flex items-center gap-2.5 text-slate-300">
@@ -68,7 +73,7 @@ export const Footer: React.FC = () => {
                   href={`tel:${COMPANY.contact.phone.replace(/[^0-9+]/g, "")}`}
                   className="hover:text-white transition-colors"
                 >
-                  {COMPANY.contact.phone} (Dispatch) / {COMPANY.contact.tollFree}
+                  {COMPANY.contact.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5 text-slate-300">
@@ -83,7 +88,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Social icons */}
-            <div className="flex items-center gap-3 pt-2">
+            {/* <div className="flex items-center gap-3 pt-2">
               <a
                 href={COMPANY.socials.linkedin}
                 target="_blank"
@@ -117,7 +122,7 @@ export const Footer: React.FC = () => {
                   <path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02z" />
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Solutions & Services */}
@@ -157,32 +162,50 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/industries/ecommerce" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/ecommerce"
+                  className="hover:text-white transition-colors"
+                >
                   E-Commerce & Retail
                 </Link>
               </li>
               <li>
-                <Link href="/industries/automotive" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/automotive"
+                  className="hover:text-white transition-colors"
+                >
                   Automotive & OEM
                 </Link>
               </li>
               <li>
-                <Link href="/industries/manufacturing" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/manufacturing"
+                  className="hover:text-white transition-colors"
+                >
                   Heavy Manufacturing
                 </Link>
               </li>
               <li>
-                <Link href="/industries/pharmaceuticals" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/pharmaceuticals"
+                  className="hover:text-white transition-colors"
+                >
                   Pharmaceuticals Cold Chain
                 </Link>
               </li>
               <li>
-                <Link href="/industries/fmcg" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/fmcg"
+                  className="hover:text-white transition-colors"
+                >
                   FMCG & Food Staples
                 </Link>
               </li>
               <li>
-                <Link href="/industries/electronics" className="hover:text-white transition-colors">
+                <Link
+                  href="/industries/electronics"
+                  className="hover:text-white transition-colors"
+                >
                   High-Tech Electronics
                 </Link>
               </li>
@@ -204,32 +227,50 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/quote" className="hover:text-white transition-colors text-orange-400 font-medium">
+                <Link
+                  href="/quote"
+                  className="hover:text-white transition-colors text-orange-400 font-medium"
+                >
                   Request Rate Quote
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="hover:text-white transition-colors"
+                >
                   Freight Capabilities
                 </Link>
               </li>
               <li>
-                <Link href="/technology" className="hover:text-white transition-colors">
+                <Link
+                  href="/technology"
+                  className="hover:text-white transition-colors"
+                >
                   Technology Platform
                 </Link>
               </li>
               <li>
-                <Link href="/network" className="hover:text-white transition-colors">
+                <Link
+                  href="/network"
+                  className="hover:text-white transition-colors"
+                >
                   Global & Domestic Network
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-white transition-colors">
+                <Link
+                  href="/blog"
+                  className="hover:text-white transition-colors"
+                >
                   Supply Chain Insights
                 </Link>
               </li>
               <li>
-                <Link href="/#faq" className="hover:text-white transition-colors">
+                <Link
+                  href="/#faq"
+                  className="hover:text-white transition-colors"
+                >
                   Frequently Asked Questions
                 </Link>
               </li>
@@ -246,7 +287,8 @@ export const Footer: React.FC = () => {
                 Need Immediate Freight Movement?
               </div>
               <p className="text-[11px] text-slate-400">
-                Our national control tower operates 24/7 for linehaul and urgent charters.
+                Our national control tower operates 24/7 for linehaul and urgent
+                charters.
               </p>
               <Link
                 href="/quote"
@@ -261,20 +303,30 @@ export const Footer: React.FC = () => {
         {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-slate-500 text-center md:text-left">
-            © {new Date().getFullYear()} {COMPANY.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {COMPANY.legalName}. All rights
+            reserved.
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 text-xs">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+            <Link
+              href="/privacy"
+              className="hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
+            <Link
+              href="/contact"
+              className="hover:text-white transition-colors"
+            >
               Branch Offices
             </Link>
-            <Link href="/sitemap.xml" className="hover:text-white transition-colors">
+            <Link
+              href="/sitemap.xml"
+              className="hover:text-white transition-colors"
+            >
               Sitemap
             </Link>
           </div>

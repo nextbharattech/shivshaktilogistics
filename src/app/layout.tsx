@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://shivshaktilogistics.com",
+    url: "https://shivshaktilogistics.info",
     title: "Shiv Shakti Logistics | Your Cargo. Our Network. Delivered.",
     description:
       "Enterprise logistics and multimodal supply-chain infrastructure. Real-time GPS visibility, dedicated linehauls, and cross-border trade corridors.",
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://shivshaktilogistics.com",
+    canonical: "https://shivshaktilogistics.info",
   },
 };
 
