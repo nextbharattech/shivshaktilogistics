@@ -85,26 +85,40 @@ export const QuoteCalculator: React.FC<{ isStandalonePage?: boolean }> = ({
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to submit quote request. Please try again.");
+        throw new Error(
+          data.error || "Failed to submit quote request. Please try again.",
+        );
       }
 
-      setSubmittedRefId(data.refId || `SSL-REQ-${Math.floor(100000 + Math.random() * 900000)}`);
+      setSubmittedRefId(
+        data.refId || `SSL-REQ-${Math.floor(100000 + Math.random() * 900000)}`,
+      );
     } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred while submitting your quote.");
+      setErrorMessage(
+        err.message ||
+          "An unexpected error occurred while submitting your quote.",
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section
-      id="quote"
-      className={`relative ${
-        isStandalonePage ? "py-12" : "py-24"
-      } bg-white text-slate-900 border-b border-slate-200 overflow-hidden`}
-    >
+    <section id="quote" className="relative py-8 overflow-hidden border-b">
+      {/* Fixed background — stays locked during scroll */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/Herobanner/herobanner4.png')",
+          willChange: "transform",
+          transform: "translateZ(0)",
+        }}
+        aria-hidden="true"
+      />
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left: Value Proposition & Rate Estimator Specs */}
           <div className="lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-semibold text-orange-800">
@@ -117,71 +131,53 @@ export const QuoteCalculator: React.FC<{ isStandalonePage?: boolean }> = ({
               <span className="text-orange-600">Freight Estimate.</span>
             </h2>
 
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-base text-slate-700 leading-relaxed">
               Submit your cargo specifications for pan-India road freight,
               domestic air cargo, or global ocean container forwarding. Our
               commercial pricing desk delivers structured quotes within 2 hours.
             </p>
 
-            {/* Pricing Benefits in light cards */}
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+            {/* Pricing Benefits in light cards (restored) */}
+            <div className="space-y-3 md:pt-26 pt-4">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-xs">
                 <ShieldCheck className="w-5 h-5 text-sky-700 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
                     Transparent Fuel & Toll Surcharges
                   </h4>
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-slate-600 mt-0.5">
                     No hidden linehaul fees. All toll and state border cess are
                     fully itemized upfront.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-xs">
                 <Truck className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
                     Guaranteed Linehaul Capacity
                   </h4>
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-slate-600 mt-0.5">
                     Committed equipment allocation even during high-demand
                     festival and quarter-end surges.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/80 backdrop-blur-sm border border-slate-200 shadow-xs">
                 <Zap className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-xs font-bold text-slate-900">
                     Dedicated Key Account Manager
                   </h4>
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[11px] text-slate-600 mt-0.5">
                     Enterprise accounts receive a single point of contact for
                     rate tenders and contract SLAs.
                   </p>
                 </div>
               </div>
             </div>
-
-            {/* Estimated Volumetric Preview */}
-            {/* <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-2">
-              <div className="text-slate-500 uppercase tracking-wider text-[10px] font-bold flex items-center justify-between">
-                <span>Volumetric Weight Preview</span>
-                <span className="text-sky-700">Formula: (L×W×H)/4000</span>
-              </div>
-              <div className="flex justify-between items-center text-slate-700">
-                <span>Calculated Vol. Weight:</span>
-                <span className="text-base font-bold text-slate-900">{volWeightRoad} kg</span>
-              </div>
-              <div className="flex justify-between items-center text-slate-700">
-                <span>Billable Weight Mode:</span>
-                <span className="text-sky-700 font-bold">
-                  {Math.max(Number(formData.approxWeightKg || 0), volWeightRoad)} kg (Chargeable)
-                </span>
-              </div>
-            </div> */}
           </div>
 
           {/* Right: The High-Converting Quote Form in clean light theme */}
@@ -514,6 +510,18 @@ export const QuoteCalculator: React.FC<{ isStandalonePage?: boolean }> = ({
                     )}
                   </button>
                 </div>
+
+                {/* Bottom Commercial Pricing Assurance */}
+                {/* <div className="pt-3.5 border-t border-slate-200 text-center space-y-1">
+                  <h4 className="text-xs font-bold text-slate-800">
+                    Get an Accurate Freight Estimate.
+                  </h4>
+                  <p className="text-[11px] text-slate-600 leading-relaxed max-w-lg mx-auto">
+                    Submit your cargo specifications for pan-India road freight,
+                    domestic air cargo, or global ocean container forwarding. Our
+                    commercial pricing desk delivers structured quotes within 2 hours.
+                  </p>
+                </div> */}
               </form>
             )}
           </div>

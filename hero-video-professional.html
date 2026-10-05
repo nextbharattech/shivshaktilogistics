@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiv Shakti Logistics - Professional Hero Video</title>
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 50%, #16213e 100%);
+            overflow: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .truck-path {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+        }
+
+        .truck-1 { animation: moveTruck1 15s linear infinite; }
+        .truck-2 { animation: moveTruck2 20s linear infinite 5s; }
+        .truck-3 { animation: moveTruck3 18s linear infinite 10s; }
+
+        @keyframes moveTruck1 {
+            0% { left: -100px; top: 20%; transform: rotate(0deg); }
+            100% { left: 110%; top: 30%; transform: rotate(5deg); }
+        }
+
+        @keyframes moveTruck2 {
+            0% { left: -100px; top: 60%; transform: rotate(-5deg); }
+            100% { left: 110%; top: 50%; transform: rotate(3deg); }
+        }
+
+        @keyframes moveTruck3 {
+            0% { left: -100px; top: 80%; transform: rotate(2deg); }
+            100% { left: 110%; top: 70%; transform: rotate(-3deg); }
+        }
+
+        /* Main Content Container */
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            animation: fadeInDown 1s ease-out forwards;
+            margin-bottom: 30px;
+            opacity: 0;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .logo-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Main Heading */
+        .main-heading {
+            font-size: 64px;
+            font-weight: 900;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: 32px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 1s forwards;
+            opacity: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+            animation: fadeInUp 1s ease-out 1.5s forwards;
+            opacity: 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+            animation: scaleIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 2s; }
+        .feature-card:nth-child(2) { animation-delay: 2.2s; }
+        .feature-card:nth-child(3) { animation-delay: 2.4s; }
+        .feature-card:nth-child(4) { animation-delay: 2.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out 3s forwards;
+            opacity: 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ff6b35;
+            display: block;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #c0c0c0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CTA Section */
+        .cta {
+            margin-top: 50px;
+            animation: fadeInUp 1s ease-out 3.5s forwards;
+            opacity: 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            text-align: right;
+            animation: fadeIn 1s ease-out 4s forwards;
+            opacity: 0;
+        }
+
+        .contact-item {
+            color: #b0b0b0;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            color: #ff6b35;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+            width: 0%;
+            animation: progressBar 40s linear forwards;
+        }
+
+        @keyframes progressBar {
+            from { width: 0%; }
+            to { width: 100%; }
+        }
+
+        /* Particles Effect */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ff6b35;
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 8s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Ending Section */
+        .ending {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 38s forwards;
+            pointer-events: none;
+        }
+
+        .ending-logo {
+            font-size: 120px;
+            margin-bottom: 30px;
+            animation: scaleIn 1s ease-out 38.5s forwards;
+            opacity: 0;
+        }
+
+        .ending-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            animation: fadeInUp 1s ease-out 39s forwards;
+            opacity: 0;
+        }
+
+        .ending-tagline {
+            font-size: 24px;
+            color: #b0b0b0;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-out 39.5s forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <!-- Animated Background -->
+        <div class="bg-animation">
+            <div class="truck-path truck-1">🚛</div>
+            <div class="truck-path truck-2">🚚</div>
+            <div class="truck-path truck-3">🚛</div>
+        </div>
+
+        <!-- Particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <div class="logo">
+                    <span class="logo-text">🚛</span>
+                </div>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="main-heading">
+                <span class="gradient-text">SHIV SHAKTI</span><br>
+                LOGISTICS
+            </h1>
+
+            <!-- Tagline -->
+            <p class="tagline">आपकी हर ज़रूरत का भरोसेमंद साथी</p>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-title">Fast Delivery</div>
+                    <div class="feature-desc">तेज़ और सुरक्षित डिलीवरी</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <div class="feature-title">Safe Transport</div>
+                    <div class="feature-desc">100% सुरक्षित परिवहन</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <div class="feature-title">Live Tracking</div>
+                    <div class="feature-desc">Real-time location tracking</div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-title">Best Rates</div>
+                    <div class="feature-desc">किफायती और पारदर्शी कीमतें</div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Deliveries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support</span>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta">
+                <button class="cta-button">Get Started</button>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <span>+91 XXXXX XXXXX</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <span>info@shivshaktilogistics.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">🌐</span>
+                <span>www.shivshaktilogistics.com</span>
+            </div>
+        </div>
+
+        <!-- Ending Section -->
+        <div class="ending">
+            <div class="ending-logo">🚛</div>
+            <div class="ending-text">
+                SHIV SHAKTI LOGISTICS
+            </div>
+            <div class="ending-tagline">
+                Moving Your World Forward
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar"></div>
+    </div>
+
+    <script>
+        // Auto-replay functionality
+        setTimeout(() => {
+            window.location.reload();
+        }, 42000); // Reload after 42 seconds (40s video + 2s buffer)
+    </script>
+</body>
+</html>

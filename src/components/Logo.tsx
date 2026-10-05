@@ -78,12 +78,12 @@ export const Logo: React.FC<LogoProps> = ({
             <span className="text-orange-600 font-extrabold tracking-wide">
               Shiv
             </span>
-            <span className="text-slate-900 font-extrabold tracking-wide">
+            <span className="text-sky-700 font-extrabold tracking-wide">
               Shakti
             </span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="text-[9px] uppercase tracking-[0.22em] font-bold text-sky-700">
+            <span className="text-[9px] uppercase tracking-[0.22em] font-bold text-slate-900">
               Logistics
             </span>
             <span className="w-1 h-1 rounded-full bg-orange-500" />

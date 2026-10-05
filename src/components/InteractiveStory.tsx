@@ -35,24 +35,24 @@ interface StoryStep {
 }
 
 const STORY_STEPS: StoryStep[] = [
+  // {
+  //   id: "step-1",
+  //   stepNumber: "01",
+  //   badge: "PICKUP",
+  //   badgeColor: "text-amber-800 bg-amber-50 border-amber-200",
+  //   stageTitle: "Smart Warehouse Pickup & Verification",
+  //   locationNode: "Delhi NCR Origin Warehouse",
+  //   description:
+  //     "Cargo is inspected, barcoded, weighed, and matched against digital purchase orders before loading onto dedicated linehaul assets.",
+  //   protocol:
+  //     "Barcoding 100% | Digital Weighbridge Match | Electronic Seal Armed",
+  //   icon: Warehouse,
+  //   image:
+  //     "/images/warehouse.png",
+  // },
   {
     id: "step-1",
     stepNumber: "01",
-    badge: "PICKUP",
-    badgeColor: "text-amber-800 bg-amber-50 border-amber-200",
-    stageTitle: "Smart Factory Pickup & Verification",
-    locationNode: "Delhi NCR Origin Warehouse",
-    description:
-      "Cargo is inspected, barcoded, weighed, and matched against digital purchase orders before loading onto dedicated linehaul assets.",
-    protocol:
-      "Barcoding 100% | Digital Weighbridge Match | Electronic Seal Armed",
-    icon: Warehouse,
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-  },
-  {
-    id: "step-2",
-    stepNumber: "02",
     badge: "IN TRANSIT",
     badgeColor: "text-sky-800 bg-sky-50 border-sky-200",
     stageTitle: "National Highway Green Corridor",
@@ -62,28 +62,28 @@ const STORY_STEPS: StoryStep[] = [
     protocol: "Dual-Driver Relay | Geofence Locked | Telematics Speed 62 km/h",
     icon: Truck,
     image:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop",
+      "/images/natinal_highway.png",
   },
   {
-    id: "step-3",
-    stepNumber: "03",
+    id: "step-2",
+    stepNumber: "02",
     badge: "CUSTOMS",
     badgeColor: "text-orange-800 bg-orange-50 border-orange-200",
-    stageTitle: "Airport & Maritime Gateway Bonded Clearance",
+    stageTitle: "Airport Cargo Maritime Gateway Bonded Clearance",
     locationNode: "Mumbai JNPT Port & IGI Air Cargo Terminal",
     description:
       "Licensed Customs House Agents (CHA) execute pre-arrival filings, X-ray scanning, and shipping bill generation with zero dwell time.",
     protocol: "ICEGATE Single Window | AEO Green Channel | Pre-Arrival Cleared",
     icon: Anchor,
     image:
-      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop",
+      "/images/aircargo.png",
   },
   {
-    id: "step-4",
-    stepNumber: "04",
+    id: "step-3",
+    stepNumber: "03",
     badge: "IN TRANSIT",
     badgeColor: "text-blue-800 bg-blue-50 border-blue-200",
-    stageTitle: "Air Cargo & Maritime International Lane",
+    stageTitle: "Ocean Shipment Maritime International Lane",
     locationNode: "Dubai Jebel Ali → Singapore → London Gateway",
     description:
       "Ocean container vessels and scheduled air freighters bridge international trade corridors with satellite-linked telemetry tracking.",
@@ -91,11 +91,11 @@ const STORY_STEPS: StoryStep[] = [
       "AIS Satellite Tracking | Scheduled Freighters | Active Reefer Temp 4.0°C",
     icon: Ship,
     image:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1200&auto=format&fit=crop",
+      "/images/ocean.png",
   },
   {
-    id: "step-5",
-    stepNumber: "05",
+    id: "step-4",
+    stepNumber: "04",
     badge: "WAREHOUSE",
     badgeColor: "text-purple-800 bg-purple-50 border-purple-200",
     stageTitle: "Regional Cross-Dock & Automated Sorting",
@@ -106,23 +106,23 @@ const STORY_STEPS: StoryStep[] = [
       "Automated Conveyor Sort | SKU Verification | Dispatch Manifest Printed",
     icon: Building2,
     image:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop",
+      "/images/warehouse.png",
   },
-  {
-    id: "step-6",
-    stepNumber: "06",
-    badge: "OUT FOR DELIVERY",
-    badgeColor: "text-emerald-800 bg-emerald-50 border-emerald-200",
-    stageTitle: "Urban Last-Mile & Doorstep Handover",
-    locationNode: "Destination Plant / Store Dock / Facility",
-    description:
-      "Electric cargo vans and specialized delivery trucks complete delivery with recipient OTP authentication, photographic proof, and instant e-POD.",
-    protocol:
-      "Dynamic Route Density | OTP Geo-Lock Verified | Signed e-POD Archived",
-    icon: CheckCircle2,
-    image:
-      "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?q=80&w=1200&auto=format&fit=crop",
-  },
+  // {
+  //   id: "step-6",
+  //   stepNumber: "06",
+  //   badge: "OUT FOR DELIVERY",
+  //   badgeColor: "text-emerald-800 bg-emerald-50 border-emerald-200",
+  //   stageTitle: "Urban Last-Mile & Doorstep Handover",
+  //   locationNode: "Destination Plant / Store Dock / Facility",
+  //   description:
+  //     "Electric cargo vans and specialized delivery trucks complete delivery with recipient OTP authentication, photographic proof, and instant e-POD.",
+  //   protocol:
+  //     "Dynamic Route Density | OTP Geo-Lock Verified | Signed e-POD Archived",
+  //   icon: CheckCircle2,
+  //   image:
+  //     "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?q=80&w=1200&auto=format&fit=crop",
+  // },
 ];
 
 export const InteractiveStory: React.FC = () => {
@@ -130,7 +130,7 @@ export const InteractiveStory: React.FC = () => {
   const activeStep = STORY_STEPS[activeStepIndex];
 
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200 text-slate-900">
+    <section className="py-12 bg-slate-50 relative overflow-hidden border-b border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
@@ -139,7 +139,7 @@ export const InteractiveStory: React.FC = () => {
             <span>Interactive Logistics Journey</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            From First Mile to Final Mile.{" "}
+            From First Mile to Last Mile.{" "}
             <span className="text-orange-600">Every Stage Managed.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600">
@@ -232,7 +232,7 @@ export const InteractiveStory: React.FC = () => {
             </div>
 
             {/* Bottom Location Indicator */}
-            <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+            {/* <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
               <div className="text-xs text-slate-500 font-mono">
                 Location Waypoint:
               </div>
@@ -240,7 +240,7 @@ export const InteractiveStory: React.FC = () => {
                 <activeStep.icon className="w-4 h-4 text-sky-700" />
                 <span>{activeStep.locationNode}</span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Narrative */}

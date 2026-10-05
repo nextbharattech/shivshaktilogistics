@@ -97,9 +97,9 @@ export default function ContactPage() {
                     >
                       {COMPANY.contact.phone}
                     </a>
-                    <div className="text-xs text-slate-500 mt-0.5 font-medium">
+                    {/* <div className="text-xs text-slate-500 mt-0.5 font-medium">
                       Toll-Free: {COMPANY.contact.tollFree}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

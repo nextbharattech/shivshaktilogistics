@@ -12,8 +12,10 @@ import {
   ArrowRight,
   Radio,
   Lock,
+  Check,
 } from "lucide-react";
 import { COMPANY } from "@/data/company";
+import Image from "next/image";
 
 export const WhyChooseUs: React.FC = () => {
   const benefits = [
@@ -62,7 +64,7 @@ export const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-b border-slate-200 text-slate-900">
+    <section className="py-12 bg-white relative overflow-hidden border-b border-slate-200 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Visual Showcase */}
@@ -82,7 +84,9 @@ export const WhyChooseUs: React.FC = () => {
                     <Radio className="w-3.5 h-3.5 text-sky-700" />
                     <span>Control Tower Active</span>
                   </span>
-                  <span className="text-[10px] text-slate-500 font-bold">24/7 Desk</span>
+                  <span className="text-[10px] text-slate-500 font-bold">
+                    24/7 Desk
+                  </span>
                 </div>
                 <div className="text-sm font-bold text-slate-900 pt-1">
                   650+ Active High-Speed Corridors
@@ -113,69 +117,93 @@ export const WhyChooseUs: React.FC = () => {
                 <div className="text-2xl font-bold font-mono text-sky-700">
                   {COMPANY.metrics.onTimeRate}
                 </div>
-                <div className="text-xs text-slate-600 font-medium mt-0.5">On-Time Linehaul SLA</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">
+                  On-Time Linehaul SLA
+                </div>
               </div>
               <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center shadow-sm">
                 <div className="text-2xl font-bold font-mono text-orange-600">
                   Zero Loss
                 </div>
-                <div className="text-xs text-slate-600 font-medium mt-0.5">Security Compliance SOP</div>
+                <div className="text-xs text-slate-600 font-medium mt-0.5">
+                  Security Compliance SOP
+                </div>
               </div>
             </div>
           </div>
 
           {/* Right Column: Narrative & Benefits List */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-2">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-xs font-semibold text-sky-800 mb-3">
                 <Shield className="w-3.5 h-3.5 text-sky-700" />
-                <span>Enterprise Value Proposition</span>
+                <span>About Us</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Built Around Your <br />
-                <span className="text-orange-600">
-                  Supply Chain.
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Shiv Shakti Logistics Pvt Ltd
+                <br />
+                <span className="text-orange-600 text-2xl">
+                  Your Trusted Logistics Partner.
                 </span>
               </h2>
               <p className="mt-4 text-base text-slate-600 leading-relaxed">
-                Logistics should be an accelerator for your enterprise, not a bottleneck. We replace manual friction, fragmented carriers, and visibility gaps with a high-velocity, disciplined logistics ecosystem.
+                Shiv Shakti Logistics Pvt. Ltd. is one of the most reputed,
+                leading and reliable organizations in the Cargo and Logistics
+                Industry, managed by an experienced team of qualified and
+                dedicated professionals and equipped with the latest Information
+                Technology. The company has dynamically grown over the years,
+                establishing a strong presence across India as well as abroad,
+                and is known for providing complete logistics solutions with
+                extensive service destinations across the country and worldwide.
               </p>
             </div>
 
             {/* Benefits Checklist in light mode */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {benefits.map((b, idx) => {
-                const Icon = b.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors shadow-sm"
-                  >
-                    <div className="flex items-center gap-2.5 mb-2">
-                      <div className={`p-1.5 rounded-lg border ${b.accent}`}>
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <h4 className="text-xs font-bold text-slate-900">
-                        {b.title}
-                      </h4>
-                    </div>
-                    <p className="text-[11px] text-slate-600 leading-relaxed">
-                      {b.description}
-                    </p>
+            <div className="grid grid-cols-2 gap-2.5 pt-2">
+              {benefits.map((b, idx) => (
+                <div
+                  key={idx}
+                  className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-slate-300 transition-colors shadow-sm flex items-center gap-2"
+                >
+                  <div className="p-1 rounded-full bg-emerald-100 text-emerald-600 shrink-0">
+                    <Check className="w-3.5 h-3.5 stroke-[3]" />
                   </div>
-                );
-              })}
+                  <h4 className="text-xs font-semibold text-slate-800 truncate">
+                    {b.title}
+                  </h4>
+                </div>
+              ))}
             </div>
 
-            {/* CTA */}
-            <div className="pt-2 flex items-center gap-4">
+            {/* CTA & Director Profile */}
+            <div className="pt-3 flex items-center gap-16 flex-wrap">
               <Link
                 href="/about"
-                className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold inline-flex items-center gap-2 transition-all shadow-md shadow-slate-900/10"
+                className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold inline-flex items-center gap-2 transition-all shadow-md shadow-slate-900/10 shrink-0"
               >
-                <span>Learn About Our Fleet Standards</span>
+                <span>Read more</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
+
+              {/* Director Info */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border border-slate-200 shadow-sm shrink-0">
+                  <Image
+                    src="/images/director_pic.jpeg"
+                    alt="Arun Pandey"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-900 leading-tight">
+                    Arun Pandey
+                  </span>
+                  <span className="text-[10px] text-slate-500 font-medium leading-tight">
+                    Director of Shiv Shakti Logistics
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

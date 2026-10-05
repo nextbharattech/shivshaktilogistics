@@ -15,6 +15,7 @@ import { QuoteCalculator } from "@/components/QuoteCalculator";
 import { TestimonialSection } from "@/components/TestimonialSection";
 import { FAQSection } from "@/components/FAQSection";
 import { InsightsSection } from "@/components/InsightsSection";
+import { OurPartners } from "@/components/OurPartners";
 import { COMPANY } from "@/data/company";
 
 export default function HomePage() {
@@ -23,35 +24,16 @@ export default function HomePage() {
       {/* 1. Cinematic Hero Section */}
       <Hero />
 
-      {/* 2. Interactive Logistics Storytelling */}
-      <InteractiveStory />
-
-      {/* 3. 8 Core Multi-Modal Services */}
-      <ServicesSection />
-
-      {/* 4. Global & Pan-India Trade Network & Interactive Map */}
-      <GlobalNetwork />
-
       {/* 5. Why Choose Us (Split Screen) */}
       <WhyChooseUs />
 
-      {/* 6. Vertical Industry Solutions */}
-      <IndustriesSection />
-
-      {/* 7. Technology & Telematics Platform */}
-      <TechnologySection />
-
-      {/* 8. Cinematic Experience Section */}
-      <CinematicVideoSection />
-
-      {/* 9. 5-Step Freight Execution Process */}
-      <ProcessSection />
-
-      {/* 10. Verified Case Studies */}
-      <CaseStudiesSection />
+      {/* 2. Interactive Logistics Storytelling */}
+      <InteractiveStory />
 
       {/* 11. Instant Commercial Rate Quote Calculator */}
       <QuoteCalculator />
+      {/* Our Partners — auto-scroll marquee */}
+      <OurPartners />
 
       {/* 12. Enterprise Testimonials Carousel */}
       <TestimonialSection />
@@ -59,11 +41,32 @@ export default function HomePage() {
       {/* 13. SEO-First FAQ Section with Schema */}
       <FAQSection />
 
+      {/* 3. 8 Core Multi-Modal Services */}
+      {/* <ServicesSection /> */}
+
+      {/* 4. Global & Pan-India Trade Network & Interactive Map */}
+      {/* <GlobalNetwork /> */}
+
+      {/* 6. Vertical Industry Solutions */}
+      {/* <IndustriesSection /> */}
+
+      {/* 7. Technology & Telematics Platform */}
+      {/* <TechnologySection /> */}
+
+      {/* 8. Cinematic Experience Section */}
+      {/* <CinematicVideoSection /> */}
+
+      {/* 9. 5-Step Freight Execution Process */}
+      {/* <ProcessSection /> */}
+
+      {/* 10. Verified Case Studies */}
+      {/* <CaseStudiesSection /> */}
+
       {/* 14. Supply Chain Insights & Research */}
-      <InsightsSection />
+      {/* <InsightsSection /> */}
 
       {/* 15. Final Visual Story Banner */}
-      <section className="py-24 relative overflow-hidden bg-slate-50 border-t border-slate-200 text-center">
+      {/* <section className="py-24 relative overflow-hidden bg-slate-50 border-t border-slate-200 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-semibold text-orange-800">
             <Zap className="w-3.5 h-3.5 text-orange-600" />
@@ -103,7 +106,7 @@ export default function HomePage() {
             <span>Instant rate tender response within 2-4 business hours.</span>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

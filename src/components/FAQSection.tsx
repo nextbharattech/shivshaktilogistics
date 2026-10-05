@@ -1,117 +1,107 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle, Search } from "lucide-react";
-import { FAQS, FAQItem } from "@/data/faq";
+import { ChevronDown } from "lucide-react";
+import { FAQS } from "@/data/faq";
 import { FAQSchema } from "./StructuredData";
 
+/* Show only the first 4 FAQs, no search / no filters */
+const VISIBLE_FAQS = FAQS.slice(0, 4);
+
 export const FAQSection: React.FC = () => {
-  const [openIds, setOpenIds] = useState<string[]>([FAQS[0].id, FAQS[1].id]);
-  const [activeCategory, setActiveCategory] = useState<string>("All");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [openId, setOpenId] = useState<string>(VISIBLE_FAQS[0].id);
 
-  const toggle = (id: string) => {
-    setOpenIds((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
-
-  const categories = ["All", "Services", "Quotes & Pricing", "Operations & Safety"];
-
-  const filteredFaqs = FAQS.filter((faq) => {
-    const matchesCat = activeCategory === "All" || faq.category === activeCategory;
-    const matchesQuery =
-      faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCat && matchesQuery;
-  });
+  const toggle = (id: string) =>
+    setOpenId((prev) => (prev === id ? "" : id));
 
   return (
-    <section id="faq" className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200 text-slate-900">
+    <section
+      id="faq"
+      className="relative py-20 overflow-hidden"
+      style={{
+        backgroundImage: "url('/images/contianer.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <FAQSchema />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-200 text-xs font-semibold text-sky-800 mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-sky-700" />
-            <span>Operational Transparency & Knowledge</span>
-          </div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-slate-900/75 backdrop-blur-[1px]" />
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Frequently Asked{" "}
-            <span className="text-sky-700">
-              Questions.
-            </span>
-          </h2>
-
-          <p className="mt-4 text-base text-slate-600">
-            Clear answers regarding our multimodal services, customs clearance, freight rates, and SLA guarantees.
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <p className="text-xs font-semibold uppercase tracking-widest text-orange-400 mb-3 flex items-center justify-center gap-2">
+            <span className="inline-block w-5 h-px bg-orange-400" />
+            Got Questions?
+            <span className="inline-block w-5 h-px bg-orange-400" />
           </p>
-
-          {/* Search Input */}
-          <div className="mt-6 max-w-md mx-auto relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Search frequently asked questions..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500 shadow-sm"
-            />
-          </div>
-
-          {/* Category Tabs in light mode */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 mt-4">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold transition-colors ${
-                  activeCategory === cat
-                    ? "bg-sky-700 text-white shadow-xs"
-                    : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Frequently{" "}
+            <span className="text-orange-400">Asked</span> Questions
+          </h2>
+          <p className="mt-3 text-sm text-slate-300 max-w-lg mx-auto">
+            Quick answers about our freight, customs, and logistics services.
+          </p>
         </div>
 
-        {/* Accordion list in clean white cards */}
-        <div className="space-y-3">
-          {filteredFaqs.map((faq) => {
-            const isOpen = openIds.includes(faq.id);
-
+        {/* Accordion — single open at a time */}
+        <div className="flex flex-col gap-3">
+          {VISIBLE_FAQS.map((faq, idx) => {
+            const isOpen = openId === faq.id;
             return (
               <div
                 key={faq.id}
-                className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden transition-all duration-200"
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? "border-orange-400/60 bg-white/10 backdrop-blur-sm"
+                    : "border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/20"
+                }`}
               >
                 <button
                   onClick={() => toggle(faq.id)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full px-5 py-4 text-left flex items-center justify-between gap-4 focus:outline-none group"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 text-sky-800 border border-slate-200 font-bold">
-                      {faq.category}
-                    </span>
-                    <span className="text-sm sm:text-base font-bold text-slate-900">
-                      {faq.question}
-                    </span>
-                  </div>
+                  {/* Number badge */}
+                  <span
+                    className={`text-xs font-black w-6 h-6 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                      isOpen
+                        ? "bg-orange-500 text-white"
+                        : "bg-white/10 text-slate-400 group-hover:bg-white/20"
+                    }`}
+                  >
+                    {idx + 1}
+                  </span>
+
+                  <span
+                    className={`flex-1 text-sm font-semibold leading-snug transition-colors duration-200 ${
+                      isOpen ? "text-white" : "text-slate-200 group-hover:text-white"
+                    }`}
+                  >
+                    {faq.question}
+                  </span>
+
                   <ChevronDown
-                    className={`w-4 h-4 text-slate-400 flex-shrink-0 transition-transform duration-200 ${
-                      isOpen ? "rotate-180 text-sky-700" : ""
+                    className={`w-4 h-4 shrink-0 transition-all duration-300 ${
+                      isOpen ? "rotate-180 text-orange-400" : "text-slate-400"
                     }`}
                   />
                 </button>
 
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 animate-in fade-in duration-150">
-                    {faq.answer}
+                {/* Answer */}
+                <div
+                  className={`transition-all duration-300 overflow-hidden ${
+                    isOpen ? "max-h-96" : "max-h-0"
+                  }`}
+                >
+                  <div className="px-5 pb-5 pt-1 border-t border-white/10">
+                    <p className="text-sm text-slate-300 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
@@ -120,3 +110,4 @@ export const FAQSection: React.FC = () => {
     </section>
   );
 };
+

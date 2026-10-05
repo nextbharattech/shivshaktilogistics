@@ -161,7 +161,7 @@ export function getUserContactConfirmationHtml(data: ContactEmailPayload): strin
         </p>
         <div style="background-color: #fff7ed; border: 1px solid #fed7aa; border-radius: 8px; padding: 14px 18px; font-size: 12px; color: #9a3412;">
           <strong>Need urgent freight assistance?</strong><br />
-          Call our 24/7 Operations Desk directly at <a href="tel:+918459335952" style="color: #ea580c; font-weight: 700; text-decoration: none;">+91 8459335952</a> or Toll-Free <a href="tel:18002098899" style="color: #ea580c; font-weight: 700; text-decoration: none;">1800 209 8899</a>.
+          Call our 24/7 Operations Desk directly at <a href="tel:+918459335952" style="color: #ea580c; font-weight: 700; text-decoration: none;">+91 8459335952</a>.
         </div>
       </td>
     </tr>
