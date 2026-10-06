@@ -78,7 +78,7 @@ export const WhyChooseUs: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
 
               {/* Floating Card Overlay 1 */}
-              <div className="absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
+              <div className="hidden md:block absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
                 <div className="flex items-center justify-between text-xs font-mono text-sky-800 font-bold">
                   <span className="flex items-center gap-1.5">
                     <Radio className="w-3.5 h-3.5 text-sky-700" />
@@ -97,7 +97,7 @@ export const WhyChooseUs: React.FC = () => {
               </div>
 
               {/* Floating Card Overlay 2 */}
-              <div className="absolute bottom-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
+              <div className="hidden md:block absolute bottom-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-800 font-bold">
                   <Lock className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Security Protocol</span>

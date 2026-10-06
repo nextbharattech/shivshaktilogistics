@@ -32,15 +32,21 @@ export const SERVICES: ServiceItem[] = [
     slug: "road-freight",
     title: "Full Truckload (FTL) & Surface Road Freight",
     shortTitle: "Road Freight",
-    tagline: "High-density interstate corridors with GPS-governed fleet telemetry.",
+    tagline:
+      "High-density interstate corridors with GPS-governed fleet telemetry.",
     shortDescription:
       "Reliable primary and secondary line-haul road transportation across all major national highways, industrial zones, and multi-modal freight corridors.",
     fullDescription:
       "Shiv Shakti Logistics operates an expansive road freight network combining dedicated fleet assets and audited partner carriers. From dedicated Full Truckload (FTL) movements of dry cargo, heavy industrial components, and bulk FMCG to temperature-controlled reefers and Part Truckload (PTL) consolidation, our road transit is monitored 24/7 through a unified GPS and telematics control tower.",
     iconName: "Truck",
-    heroImage:
-      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Dedicated FTL", "Part Truckload (PTL)", "Containerized Fleet", "Reefer Cold Chain", "ODC / Heavy Haul"],
+    heroImage: "/images/truck1.png",
+    modes: [
+      "Dedicated FTL",
+      "Part Truckload (PTL)",
+      "Containerized Fleet",
+      "Reefer Cold Chain",
+      "ODC / Heavy Haul",
+    ],
     keyHighlights: [
       "Real-time GPS telematics with live geofencing and stopover alerts",
       "Multi-axle, containerized 32ft MXL, and 40ft high-cube options",
@@ -71,10 +77,13 @@ export const SERVICES: ServiceItem[] = [
     ],
     operationalSpecs: {
       coverage: "Pan-India National Highway Network & Key Corridors",
-      fleetOptions: "14ft, 20ft, 24ft, 32ft SXL/MXL, 40ft Trailers, Reefer Vans",
+      fleetOptions:
+        "14ft, 20ft, 24ft, 32ft SXL/MXL, 40ft Trailers, Reefer Vans",
       leadTimes: "Same-day regional dispatch, 24-72h inter-state express lines",
-      trackingPrecision: "Live GPS updates every 60 seconds with temperature telemetry",
-      compliance: "CMVR compliant, Motor Vehicle Act certified, Comprehensive In-Transit Marine Cover",
+      trackingPrecision:
+        "Live GPS updates every 60 seconds with temperature telemetry",
+      compliance:
+        "CMVR compliant, Motor Vehicle Act certified, Comprehensive In-Transit Marine Cover",
     },
     suitableFor: [
       "Automotive Parts & Assemblies",
@@ -90,7 +99,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "air-freight",
     title: "Global & Domestic Express Air Freight",
     shortTitle: "Air Freight",
-    tagline: "Time-critical cargo delivered through scheduled airline capacity and chartered freighters.",
+    tagline:
+      "Time-critical cargo delivered through scheduled airline capacity and chartered freighters.",
     shortDescription:
       "Urgent domestic airport-to-airport or door-to-door cargo connections and international IATA air cargo solutions for high-value and sensitive goods.",
     fullDescription:
@@ -98,7 +108,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Plane",
     heroImage:
       "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Next Flight Out (NFO)", "Consolidated Air Cargo", "Charter Cargo Flights", "Temperature Controlled Air", "Hazardous Material (HAZMAT)"],
+    modes: [
+      "Next Flight Out (NFO)",
+      "Consolidated Air Cargo",
+      "Charter Cargo Flights",
+      "Temperature Controlled Air",
+      "Hazardous Material (HAZMAT)",
+    ],
     keyHighlights: [
       "Direct airport tarmac handoffs and expedited bonded transfers",
       "Complete customs air waybill (AWB) generation & pre-clearance",
@@ -128,11 +144,16 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     operationalSpecs: {
-      coverage: "35+ Domestic Commercial Airports & 120+ International Gateways",
-      fleetOptions: "Wide-body belly space, Boeing 777F/747F charters, regional turboprops",
-      leadTimes: "Domestic: 12-24 hours | International: 24-72 hours door-to-door",
-      trackingPrecision: "Milestone telemetry linked to FlightRadar24 and airline AWB data feeds",
-      compliance: "IATA Member Standards, TSA / BCAS Security Regulated, AEO Certified",
+      coverage:
+        "35+ Domestic Commercial Airports & 120+ International Gateways",
+      fleetOptions:
+        "Wide-body belly space, Boeing 777F/747F charters, regional turboprops",
+      leadTimes:
+        "Domestic: 12-24 hours | International: 24-72 hours door-to-door",
+      trackingPrecision:
+        "Milestone telemetry linked to FlightRadar24 and airline AWB data feeds",
+      compliance:
+        "IATA Member Standards, TSA / BCAS Security Regulated, AEO Certified",
     },
     suitableFor: [
       "Aerospace & AOG Spare Parts",
@@ -148,15 +169,22 @@ export const SERVICES: ServiceItem[] = [
     slug: "ocean-freight",
     title: "Global Ocean Freight Forwarding (FCL / LCL)",
     shortTitle: "Ocean Freight",
-    tagline: "Scalable sea container shipping connecting major world ports and domestic coastal lines.",
+    tagline:
+      "Scalable sea container shipping connecting major world ports and domestic coastal lines.",
     shortDescription:
       "Comprehensive Full Container Load (FCL) and Less than Container Load (LCL) sea transportation with secure multi-carrier contracts and customs clearance.",
     fullDescription:
       "Shiv Shakti Logistics coordinates maritime logistics across major international shipping lanes. We manage origin drayage, port terminal operations, ocean bill of lading documentation, and final inland destination clearance through long-term partnerships with premier container shipping alliances.",
     iconName: "Ship",
     heroImage:
-      "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Full Container Load (FCL)", "Less than Container Load (LCL)", "Breakbulk & Project Ocean", "Reefer Containers", "Coastal RO-RO"],
+      "https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop",
+    modes: [
+      "Full Container Load (FCL)",
+      "Less than Container Load (LCL)",
+      "Breakbulk & Project Ocean",
+      "Reefer Containers",
+      "Coastal RO-RO",
+    ],
     keyHighlights: [
       "Direct contracts with Tier-1 ocean liners ensuring predictable container allocation",
       "Automated electronic Bill of Lading (eBL) and VGM (Verified Gross Mass) processing",
@@ -186,11 +214,15 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     operationalSpecs: {
-      coverage: "Direct services to APAC, Middle East, Europe, North America & Africa",
+      coverage:
+        "Direct services to APAC, Middle East, Europe, North America & Africa",
       fleetOptions: "20' GP, 40' GP, 40' HC, 45' High Cube, Reefer, Flat Racks",
-      leadTimes: "Port-to-port scheduled sailings with fixed ETA buffer modeling",
-      trackingPrecision: "Container AIS vessel tracking + terminal gate-in / gate-out sensors",
-      compliance: "FMC licensed, IMO SOLAS VGM compliant, WCO AEO Tier-2 certified",
+      leadTimes:
+        "Port-to-port scheduled sailings with fixed ETA buffer modeling",
+      trackingPrecision:
+        "Container AIS vessel tracking + terminal gate-in / gate-out sensors",
+      compliance:
+        "FMC licensed, IMO SOLAS VGM compliant, WCO AEO Tier-2 certified",
     },
     suitableFor: [
       "Industrial Bulk Chemicals & Raw Materials",
@@ -206,7 +238,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "warehousing",
     title: "Grade-A Automated Warehousing & Distribution",
     shortTitle: "Warehousing",
-    tagline: "Modern fulfillment centers equipped with WMS, temperature zones, and automated sorting.",
+    tagline:
+      "Modern fulfillment centers equipped with WMS, temperature zones, and automated sorting.",
     shortDescription:
       "Scalable multi-client and dedicated warehouse facilities situated at strategic logistics hubs with advanced inventory control and value-added packaging.",
     fullDescription:
@@ -214,7 +247,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Warehouse",
     heroImage:
       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Dedicated Contract Warehousing", "Multi-Client Shared Facilities", "Bonded Custom Warehouses", "Cold Storage & Reefer Hubs", "Micro-Fulfillment Centers"],
+    modes: [
+      "Dedicated Contract Warehousing",
+      "Multi-Client Shared Facilities",
+      "Bonded Custom Warehouses",
+      "Cold Storage & Reefer Hubs",
+      "Micro-Fulfillment Centers",
+    ],
     keyHighlights: [
       "Real-time cloud WMS with live inventory dashboards and ERP API integration",
       "Heavy-duty VNA racking, electric reach trucks, and laser-guided sorting",
@@ -244,11 +283,15 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     operationalSpecs: {
-      coverage: "Over 1.5 Million sq. ft. across Delhi NCR, Mumbai, Gujarat, Bengaluru & Kolkata",
-      fleetOptions: "Modern dock levelers, battery electric reach trucks, motorized conveyors",
+      coverage:
+        "Over 1.5 Million sq. ft. across Delhi NCR, Mumbai, Gujarat, Bengaluru & Kolkata",
+      fleetOptions:
+        "Modern dock levelers, battery electric reach trucks, motorized conveyors",
       leadTimes: "Same-day order-to-ship fulfillment SLA under 2 hours",
-      trackingPrecision: "SKU-level barcode scanning with real-time API inventory synchronization",
-      compliance: "ISO 9001:2015, ISO 27001 Security, FSSAI certified for food items",
+      trackingPrecision:
+        "SKU-level barcode scanning with real-time API inventory synchronization",
+      compliance:
+        "ISO 9001:2015, ISO 27001 Security, FSSAI certified for food items",
     },
     suitableFor: [
       "E-Commerce Brands & D2C Marketplaces",
@@ -264,7 +307,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "express-delivery",
     title: "High-Priority Express & Time-Definite Freight",
     shortTitle: "Express Delivery",
-    tagline: "Guaranteed transit slots for high-urgency commercial consignments.",
+    tagline:
+      "Guaranteed transit slots for high-urgency commercial consignments.",
     shortDescription:
       "Time-definite express transportation backed by dedicated surface express runs, air courier connectivity, and prioritized hub processing.",
     fullDescription:
@@ -272,7 +316,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Zap",
     heroImage:
       "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Same-Day Metro Express", "Next-Day Guaranteed Inter-City", "Time-Definite 48h National", "Dedicated Hot-Shot Vans", "Critical Sample Dispatch"],
+    modes: [
+      "Same-Day Metro Express",
+      "Next-Day Guaranteed Inter-City",
+      "Time-Definite 48h National",
+      "Dedicated Hot-Shot Vans",
+      "Critical Sample Dispatch",
+    ],
     keyHighlights: [
       "Guaranteed delivery SLA with proactive delay warning telemetry",
       "Relay trucking models: two rested drivers per vehicle for non-stop transit",
@@ -303,10 +353,13 @@ export const SERVICES: ServiceItem[] = [
     ],
     operationalSpecs: {
       coverage: "Pan-India Express Network spanning 500+ commercial centers",
-      fleetOptions: "GPS-locked GPS-sealed container trucks, dedicated sprinter vans",
+      fleetOptions:
+        "GPS-locked GPS-sealed container trucks, dedicated sprinter vans",
       leadTimes: "Metro-to-Metro: 12-24 Hours | Secondary Hubs: 24-36 Hours",
-      trackingPrecision: "Live GPS broadcast + automated checkpoint timestamp scan",
-      compliance: "Strict transit SLA guarantees with milestone insurance cover",
+      trackingPrecision:
+        "Live GPS broadcast + automated checkpoint timestamp scan",
+      compliance:
+        "Strict transit SLA guarantees with milestone insurance cover",
     },
     suitableFor: [
       "Critical Spare Parts for Manufacturing Lines",
@@ -322,7 +375,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "last-mile-delivery",
     title: "Urban & Regional Last-Mile Distribution",
     shortTitle: "Last-Mile Delivery",
-    tagline: "Smart route optimization for residential, retail, and commercial doorstep deliveries.",
+    tagline:
+      "Smart route optimization for residential, retail, and commercial doorstep deliveries.",
     shortDescription:
       "Intelligent last-mile logistics combining EV and CNG fleet distribution, algorithmic multi-stop routing, and digital Proof-of-Delivery.",
     fullDescription:
@@ -330,7 +384,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "MapPin",
     heroImage:
       "https://images.unsplash.com/photo-1549194388-f61be84a6e9e?q=80&w=1600&auto=format&fit=crop",
-    modes: ["B2B Store Replenishment", "D2C Direct Doorstep", "Electric Vehicle (EV) Delivery", "Cash-on-Delivery (COD) Reconciliation", "Reverse Pickup & QC"],
+    modes: [
+      "B2B Store Replenishment",
+      "D2C Direct Doorstep",
+      "Electric Vehicle (EV) Delivery",
+      "Cash-on-Delivery (COD) Reconciliation",
+      "Reverse Pickup & QC",
+    ],
     keyHighlights: [
       "Dynamic route clustering minimizing transit time and carbon footprint",
       "Real-time driver location sharing with live delivery ETA via SMS/WhatsApp",
@@ -361,10 +421,14 @@ export const SERVICES: ServiceItem[] = [
     ],
     operationalSpecs: {
       coverage: "Direct presence in 120+ cities and 19,000+ PIN codes",
-      fleetOptions: "EV Cargo Vans, 3-Wheelers, Small Commercial Vehicles (SCVs)",
-      leadTimes: "Same-Day Urban, Next-Day Suburbs, Scheduled 2-Hour Appointment Slots",
-      trackingPrecision: "Live turn-by-turn driver tracking with automated customer notification",
-      compliance: "Full municipal compliance, certified couriers, insured goods-in-transit",
+      fleetOptions:
+        "EV Cargo Vans, 3-Wheelers, Small Commercial Vehicles (SCVs)",
+      leadTimes:
+        "Same-Day Urban, Next-Day Suburbs, Scheduled 2-Hour Appointment Slots",
+      trackingPrecision:
+        "Live turn-by-turn driver tracking with automated customer notification",
+      compliance:
+        "Full municipal compliance, certified couriers, insured goods-in-transit",
     },
     suitableFor: [
       "Omnichannel Fashion & Lifestyle Brands",
@@ -380,7 +444,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "freight-forwarding",
     title: "International Freight Forwarding & Customs Brokerage",
     shortTitle: "Freight Forwarding",
-    tagline: "Navigating cross-border trade, regulatory compliance, and multi-modal transit.",
+    tagline:
+      "Navigating cross-border trade, regulatory compliance, and multi-modal transit.",
     shortDescription:
       "End-to-end international freight brokerage, tariff classification, licensed customs clearance, and global trade compliance.",
     fullDescription:
@@ -388,7 +453,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Globe",
     heroImage:
       "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1600&auto=format&fit=crop",
-    modes: ["Import & Export Brokerage", "Customs Clearance (CHA)", "Bonded Cargo Transfers", "Dangerous Goods (HAZMAT)", "Free Trade Zone (FTWZ) Logistics"],
+    modes: [
+      "Import & Export Brokerage",
+      "Customs Clearance (CHA)",
+      "Bonded Cargo Transfers",
+      "Dangerous Goods (HAZMAT)",
+      "Free Trade Zone (FTWZ) Logistics",
+    ],
     keyHighlights: [
       "In-house licensed Customs House Agents (CHA) operating at all sea ports & airports",
       "Harmonized System (HS) code classification and import duty optimization advisory",
@@ -418,11 +489,16 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
     operationalSpecs: {
-      coverage: "Direct operations across major Indian ports, airports, and 120 global trade lanes",
-      fleetOptions: "Bonded trucks, container chassis, rail rakes, multi-modal transport operators (MTO)",
-      leadTimes: "Customs clearance within 24-48 hours of vessel/flight arrival",
-      trackingPrecision: "Integrated customs manifest & EDI status milestone updates",
-      compliance: "Indian Customs Broker License, FIATA affiliated, AEO compliant",
+      coverage:
+        "Direct operations across major Indian ports, airports, and 120 global trade lanes",
+      fleetOptions:
+        "Bonded trucks, container chassis, rail rakes, multi-modal transport operators (MTO)",
+      leadTimes:
+        "Customs clearance within 24-48 hours of vessel/flight arrival",
+      trackingPrecision:
+        "Integrated customs manifest & EDI status milestone updates",
+      compliance:
+        "Indian Customs Broker License, FIATA affiliated, AEO compliant",
     },
     suitableFor: [
       "Industrial Manufacturers & Importers",
@@ -438,7 +514,8 @@ export const SERVICES: ServiceItem[] = [
     slug: "supply-chain-management",
     title: "End-to-End Enterprise Supply Chain Engineering",
     shortTitle: "Supply Chain Solutions",
-    tagline: "Holistic 4PL orchestration, network design, and digital control tower visibility.",
+    tagline:
+      "Holistic 4PL orchestration, network design, and digital control tower visibility.",
     shortDescription:
       "Strategic logistics architecture integrating multi-modal transportation, warehouse placement, vendor management, and continuous predictive optimization.",
     fullDescription:
@@ -446,7 +523,13 @@ export const SERVICES: ServiceItem[] = [
     iconName: "Cpu",
     heroImage:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
-    modes: ["4PL Logistics Orchestration", "Network Design & Facility Location", "Control Tower Visibility", "Reverse Logistics Architecture", "Vendor Consolidation"],
+    modes: [
+      "4PL Logistics Orchestration",
+      "Network Design & Facility Location",
+      "Control Tower Visibility",
+      "Reverse Logistics Architecture",
+      "Vendor Consolidation",
+    ],
     keyHighlights: [
       "Centralized 24/7 Supply Chain Control Tower managing all carrier feeds and milestones",
       "Predictive delay modeling leveraging machine learning and historical traffic corridors",
@@ -477,10 +560,14 @@ export const SERVICES: ServiceItem[] = [
     ],
     operationalSpecs: {
       coverage: "Global and pan-national supply chain orchestration",
-      fleetOptions: "Multi-carrier, multi-modal network integrated under single SLA",
-      leadTimes: "Continuous real-time optimization with monthly operational reviews (QBR)",
-      trackingPrecision: "Single API data lake consolidating EDI, IoT, GPS, and customs databases",
-      compliance: "ISO 28000 (Supply Chain Security), SOC 2 Type II data governance",
+      fleetOptions:
+        "Multi-carrier, multi-modal network integrated under single SLA",
+      leadTimes:
+        "Continuous real-time optimization with monthly operational reviews (QBR)",
+      trackingPrecision:
+        "Single API data lake consolidating EDI, IoT, GPS, and customs databases",
+      compliance:
+        "ISO 28000 (Supply Chain Security), SOC 2 Type II data governance",
     },
     suitableFor: [
       "Automotive OEMs & Tier-1 Suppliers",

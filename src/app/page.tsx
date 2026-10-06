@@ -25,8 +25,9 @@ export default function HomePage() {
       <Hero />
 
       {/* 5. Why Choose Us (Split Screen) */}
+      <div id="about">
       <WhyChooseUs />
-
+      </div>
       {/* 2. Interactive Logistics Storytelling */}
       <InteractiveStory />
 

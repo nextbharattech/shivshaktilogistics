@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+    { label: "About", href: "/#about" },
     {
       label: "Services",
       href: "/services",
@@ -62,9 +62,9 @@ export const Navbar: React.FC = () => {
       hasDropdown: true,
       dropdownType: "industries",
     },
-    { label: "Technology", href: "/technology" },
+    // { label: "Technology", href: "/technology" },
     { label: "Network", href: "/network" },
-    // { label: "Insights", href: "/blog" },
+    { label: "Blog", href: "/blog" },
     // { label: "Contact", href: "/contact" },
   ];
 
@@ -328,12 +328,12 @@ export const Navbar: React.FC = () => {
                 >
                   Industries We Serve
                 </Link>
-                <Link
+                {/* <Link
                   href="/technology"
                   className="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:text-sky-700 rounded-lg hover:bg-slate-50"
                 >
                   Technology Platform
-                </Link>
+                </Link> */}
                 <Link
                   href="/network"
                   className="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:text-sky-700 rounded-lg hover:bg-slate-50"
@@ -341,7 +341,8 @@ export const Navbar: React.FC = () => {
                   Network & Hubs
                 </Link>
                 <Link
-                  href="/about"
+                  // href="/about"
+                  href="/#about"
                   className="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:text-sky-700 rounded-lg hover:bg-slate-50"
                 >
                   About Shiv Shakti
