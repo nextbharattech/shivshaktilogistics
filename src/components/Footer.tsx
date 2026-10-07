@@ -9,6 +9,7 @@ import {
   Shield,
   CheckCircle2,
   ExternalLink,
+  BadgeIndianRupee,
 } from "lucide-react";
 import { Logo } from "./Logo";
 import { COMPANY } from "@/data/company";
@@ -67,6 +68,12 @@ export const Footer: React.FC = () => {
                   {COMPANY.headquarters.postalCode}
                 </span>
               </div>
+              <div className="flex items-start gap-2.5 text-slate-300">
+  <BadgeIndianRupee className="w-4 h-4 text-orange-400 flex-shrink-0 mt-0.5" />
+  <span>
+    GST: {COMPANY.gst}
+  </span>
+</div>
               <div className="flex items-center gap-2.5 text-slate-300">
                 <Phone className="w-4 h-4 text-sky-400 flex-shrink-0" />
                 <a
@@ -76,6 +83,7 @@ export const Footer: React.FC = () => {
                   {COMPANY.contact.phone}
                 </a>
               </div>
+              
               <div className="flex items-center gap-2.5 text-slate-300">
                 <Mail className="w-4 h-4 text-sky-400 flex-shrink-0" />
                 <a

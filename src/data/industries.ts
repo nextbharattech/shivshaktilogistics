@@ -18,6 +18,33 @@ export interface IndustryItem {
 
 export const INDUSTRIES: IndustryItem[] = [
   {
+    id: "pharmaceuticals",
+    slug: "pharmaceuticals",
+    title: "Pharmaceuticals & Healthcare",
+    tagline: "GDP-compliant cold chain, unbroken temperature monitoring, and clinical logistics.",
+    description:
+      "Pharmaceutical shipments demand zero temperature deviations, tamper-evident security, and strict regulatory documentation. Shiv Shakti Logistics delivers certified cold-chain and clinical freight.",
+    heroImage:
+      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop",
+    iconName: "ShieldAlert",
+    challenge:
+      "Maintaining continuous +2°C to +8°C or -20°C temperature integrity during extreme ambient heat, preventing pilferage of sensitive medicines, and meeting stringent Good Distribution Practice (GDP) standards.",
+    solution:
+      "Active and passive refrigerated reefer trucks, IoT temperature and humidity data loggers with live cloud telemetry, sealed GPS digital locks, and temperature-controlled air freight containers.",
+    keyBenefits: [
+      "Live temperature telemetry with threshold alert SMS/email pings",
+      "Tamper-proof digital e-locks unlocking only at designated geo-fences",
+      "Validated cold boxes and dry-ice replenishments for biological samples",
+      "Trained handling personnel following strict GDP operating SOPs",
+    ],
+    metrics: [
+      { label: "Cold-Chain Integrity", value: "99.9% Excursion-Free" },
+      { label: "Temperature Range", value: "-25°C to +25°C" },
+      { label: "Regulatory Compliance", value: "GDP & WHO Standards" },
+    ],
+    servicesUtilized: ["Air Freight", "Road Freight", "Express Delivery"],
+  },
+  {
     id: "ecommerce",
     slug: "ecommerce",
     title: "E-Commerce & D2C Brands",
@@ -25,7 +52,7 @@ export const INDUSTRIES: IndustryItem[] = [
     description:
       "Modern e-commerce requires fast order fulfillment, distributed micro-warehousing, and reliable doorstep delivery. Shiv Shakti Logistics enables omni-channel brands to fulfill orders across the nation with minimal transit times.",
     heroImage:
-      "https://images.unsplash.com/photo-1556742049-0a67c5574f73?q=80&w=1600&auto=format&fit=crop",
+      "/industries/d2c.png",
     iconName: "ShoppingBag",
     challenge:
       "High return rates (RTO), unpredictable demand spikes during festival sales, and consumer demands for same-day/next-day deliveries without inflating shipping costs.",
@@ -43,33 +70,6 @@ export const INDUSTRIES: IndustryItem[] = [
       { label: "Metro Delivery", value: "Same / Next Day" },
     ],
     servicesUtilized: ["Warehousing", "Last-Mile Delivery", "Express Delivery"],
-  },
-  {
-    id: "automotive",
-    slug: "automotive",
-    title: "Automotive & Auto Components",
-    tagline: "Just-In-Time (JIT) line-side delivery and critical OEM spare parts logistics.",
-    description:
-      "Automotive assembly lines operate on razor-thin inventory buffers. A delay in a single component can halt an entire production plant. Shiv Shakti Logistics delivers time-critical automotive supply chain orchestration.",
-    heroImage:
-      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop",
-    iconName: "Car",
-    challenge:
-      "Factory line-stoppage risks caused by transit delays, strict delivery appointment slots at OEM assembly docks, and complex returnable packaging management.",
-    solution:
-      "Dedicated milk-run collection routes, GPS-telemetry tracked line-haul trucking, JIT sequence buffering near major auto clusters (Gurugram, Pune, Chennai, Sanand), and returnable dunnage tracking.",
-    keyBenefits: [
-      "Zero-downtime assembly line replenishment protocols",
-      "Direct dock-to-line barcode receiving compliance",
-      "Emergency Next-Flight-Out (NFO) hot-shot recovery services",
-      "Damage-free handling with custom vehicle fixtures and straps",
-    ],
-    metrics: [
-      { label: "On-Time-In-Full (OTIF)", value: "99.6%" },
-      { label: "Auto Hubs Connected", value: "All Major OEM Zones" },
-      { label: "Assembly Stoppage", value: "Zero Tolerance" },
-    ],
-    servicesUtilized: ["Road Freight", "Express Delivery", "Supply Chain Management"],
   },
   {
     id: "manufacturing",
@@ -99,6 +99,33 @@ export const INDUSTRIES: IndustryItem[] = [
     servicesUtilized: ["Road Freight", "Ocean Freight", "Freight Forwarding"],
   },
   {
+    id: "automotive",
+    slug: "automotive",
+    title: "Automotive & Auto Components",
+    tagline: "Just-In-Time (JIT) line-side delivery and critical OEM spare parts logistics.",
+    description:
+      "Automotive assembly lines operate on razor-thin inventory buffers. A delay in a single component can halt an entire production plant. Shiv Shakti Logistics delivers time-critical automotive supply chain orchestration.",
+    heroImage:
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop",
+    iconName: "Car",
+    challenge:
+      "Factory line-stoppage risks caused by transit delays, strict delivery appointment slots at OEM assembly docks, and complex returnable packaging management.",
+    solution:
+      "Dedicated milk-run collection routes, GPS-telemetry tracked line-haul trucking, JIT sequence buffering near major auto clusters (Gurugram, Pune, Chennai, Sanand), and returnable dunnage tracking.",
+    keyBenefits: [
+      "Zero-downtime assembly line replenishment protocols",
+      "Direct dock-to-line barcode receiving compliance",
+      "Emergency Next-Flight-Out (NFO) hot-shot recovery services",
+      "Damage-free handling with custom vehicle fixtures and straps",
+    ],
+    metrics: [
+      { label: "On-Time-In-Full (OTIF)", value: "99.6%" },
+      { label: "Auto Hubs Connected", value: "All Major OEM Zones" },
+      { label: "Assembly Stoppage", value: "Zero Tolerance" },
+    ],
+    servicesUtilized: ["Road Freight", "Express Delivery", "Supply Chain Management"],
+  },
+  {
     id: "retail",
     slug: "retail",
     title: "Retail & Consumer Durables",
@@ -124,33 +151,6 @@ export const INDUSTRIES: IndustryItem[] = [
       { label: "Pallet Integrity", value: "Zero Pilferage Sealed Locks" },
     ],
     servicesUtilized: ["Warehousing", "Road Freight", "Last-Mile Delivery"],
-  },
-  {
-    id: "pharmaceuticals",
-    slug: "pharmaceuticals",
-    title: "Pharmaceuticals & Healthcare",
-    tagline: "GDP-compliant cold chain, unbroken temperature monitoring, and clinical logistics.",
-    description:
-      "Pharmaceutical shipments demand zero temperature deviations, tamper-evident security, and strict regulatory documentation. Shiv Shakti Logistics delivers certified cold-chain and clinical freight.",
-    heroImage:
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=1600&auto=format&fit=crop",
-    iconName: "ShieldAlert",
-    challenge:
-      "Maintaining continuous +2°C to +8°C or -20°C temperature integrity during extreme ambient heat, preventing pilferage of sensitive medicines, and meeting stringent Good Distribution Practice (GDP) standards.",
-    solution:
-      "Active and passive refrigerated reefer trucks, IoT temperature and humidity data loggers with live cloud telemetry, sealed GPS digital locks, and temperature-controlled air freight containers.",
-    keyBenefits: [
-      "Live temperature telemetry with threshold alert SMS/email pings",
-      "Tamper-proof digital e-locks unlocking only at designated geo-fences",
-      "Validated cold boxes and dry-ice replenishments for biological samples",
-      "Trained handling personnel following strict GDP operating SOPs",
-    ],
-    metrics: [
-      { label: "Cold-Chain Integrity", value: "99.9% Excursion-Free" },
-      { label: "Temperature Range", value: "-25°C to +25°C" },
-      { label: "Regulatory Compliance", value: "GDP & WHO Standards" },
-    ],
-    servicesUtilized: ["Air Freight", "Road Freight", "Express Delivery"],
   },
   {
     id: "fmcg",
@@ -214,7 +214,7 @@ export const INDUSTRIES: IndustryItem[] = [
     description:
       "From turbines and transformers to automated CNC equipment and manufacturing lines, industrial machinery logistics requires specialized engineering, permits, and heavy-lift equipment.",
     heroImage:
-      "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=1600&auto=format&fit=crop",
+      "/industries/industry.png",
     iconName: "Wrench",
     challenge:
       "Over-weight, over-height, and over-width loads that cannot use standard highway bridges or toll lanes, requiring specialized hydraulic axles and government permits.",

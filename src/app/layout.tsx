@@ -94,7 +94,7 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
       <head>
         <OrganizationSchema />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/images/logo.jpeg" sizes="any" />
       </head>
       <body className="bg-white text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-500 selection:text-white">
         <Navbar />
