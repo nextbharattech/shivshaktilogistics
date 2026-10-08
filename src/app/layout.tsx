@@ -83,6 +83,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://shivshaktilogistics.info",
   },
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -94,7 +98,8 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} scroll-smooth`}>
       <head>
         <OrganizationSchema />
-        <link rel="icon" href="/images/logo.jpeg" sizes="any" />
+        <link rel="icon" href="/images/logo.png" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
       </head>
       <body className="bg-white text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-500 selection:text-white">
         <Navbar />

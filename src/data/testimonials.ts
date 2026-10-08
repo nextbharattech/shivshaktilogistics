@@ -10,33 +10,73 @@ export interface TestimonialItem {
 
 export const TESTIMONIALS: TestimonialItem[] = [
   {
-    id: "test-1",
-    clientName: "Sunil K. Varma",
-    designation: "Head of Logistics & Distribution",
-    company: "Precision Engineering Components Ltd.",
-    industry: "Automotive & Heavy Engineering",
+    id: "test-7",
+    clientName: "Mr. Nitish",
+    designation: "Logistics Manager",
+    company: "Tata 1Mg Healthcare Solutions Pvt. Ltd.",
+    industry: "Healthcare & E-Pharmacy",
     quote:
-      "Shiv Shakti Logistics transformed our interstate component transit. Their GPS control tower and committed line-haul delivery schedules have brought predictability to our factory docks that we simply didn't have with legacy transporters.",
+      "For healthcare supply networks, punctuality and integrity of cargo are paramount. Shiv Shakti Logistics consistently maintains strict SLA adherence and reliable freight coordination across all our supply routes.",
     verifiedPartner: true,
   },
   {
     id: "test-2",
-    clientName: "Meenakshi Sundaram",
-    designation: "Director of Supply Chain",
-    company: "Apex D2C Brands Group",
-    industry: "E-Commerce & Retail",
+    clientName: "Mr. Vineet Sharma",
+    designation: "Logistics Manager",
+    company: "Torrent Pharma Ltd.",
+    industry: "Pharmaceuticals",
     quote:
-      "Fulfilling festive orders without stock-outs or delivery failures was our greatest operational hurdle. With Shiv Shakti's multi-hub fulfillment and responsive express dispatch, our customer delivery CSAT hit an all-time high.",
+      "Handling pharmaceutical shipments demands strict timeliness, temperature adherence, and zero transit deviation. Shiv Shakti Logistics delivers professional fleet management and real-time transit visibility on every single consignment.",
+    verifiedPartner: true,
+  },
+  {
+    id: "test-1",
+    clientName: "Mr. Ravi",
+    designation: "Logistics Manager",
+    company: "KRBL Ltd.",
+    industry: "FMCG & Agri-Commodities",
+    quote:
+      "Shiv Shakti Logistics has been an outstanding logistics partner for KRBL Ltd. Their dependable line-haul fleet and disciplined transit schedules ensure our bulk grain shipments arrive safely and on time across key state corridors.",
     verifiedPartner: true,
   },
   {
     id: "test-3",
-    clientName: "Dr. Arvind Chawla",
-    designation: "VP of Quality & Regulatory Affairs",
-    company: "Biovault Therapeutics",
-    industry: "Pharmaceuticals",
+    clientName: "Mr. Ram",
+    designation: "Logistics Manager",
+    company: "Brandman Retail Ltd.",
+    industry: "Retail & Consumer Goods",
     quote:
-      "In cold-chain biopharma, a temperature deviation means total consignment write-off. Shiv Shakti's active reefer tracking and automated temperature logs give our quality compliance team 100% peace of mind on every single run.",
+      "Meeting peak retail supply cycles without stock-outs requires an agile freight partner. Shiv Shakti's prompt vehicle placement and proactive tracking have consistently streamlined our nationwide distribution operations.",
+    verifiedPartner: true,
+  },
+  {
+    id: "test-4",
+    clientName: "Mr. Chankit",
+    designation: "Logistics Manager",
+    company: "Sunford HealthCare Pvt. Ltd.",
+    industry: "Healthcare & Pharmaceuticals",
+    quote:
+      "We rely heavily on Shiv Shakti Logistics for moving sensitive healthcare products securely. Their prompt fleet dispatch, intact cargo handling, and responsive dispatch team have made them our trusted freight partner.",
+    verifiedPartner: true,
+  },
+  {
+    id: "test-5",
+    clientName: "Mr. Manoj",
+    designation: "Logistics Manager",
+    company: "Godrej & Boyce Ltd.",
+    industry: "Manufacturing & Consumer Durables",
+    quote:
+      "Moving heavy industrial and commercial equipment safely requires robust vehicles and seasoned drivers. Shiv Shakti Logistics delivers exemplary freight execution, transparent transit updates, and dependable service quality.",
+    verifiedPartner: true,
+  },
+  {
+    id: "test-6",
+    clientName: "Mr. Virender",
+    designation: "Logistics Manager",
+    company: "Pearl Polymers Ltd.",
+    industry: "Polymers & Packaging",
+    quote:
+      "Their seamless interstate connectivity and prompt vehicle availability have significantly cut down our transit turnaround times. Shiv Shakti Logistics handles our polymer and packaging consignments with utmost care.",
     verifiedPartner: true,
   },
 ];
