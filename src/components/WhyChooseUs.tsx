@@ -71,14 +71,14 @@ export const WhyChooseUs: React.FC = () => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3] bg-slate-100 border border-slate-200 shadow-xl group">
               <img
-                src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=1200&auto=format&fit=crop"
+                src="/images/shivshaktiwarehouse.png"
                 alt="Shiv Shakti Logistics Operations"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+              {/* <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" /> */}
 
               {/* Floating Card Overlay 1 */}
-              <div className="hidden md:block absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
+              {/* <div className="hidden md:block absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
                 <div className="flex items-center justify-between text-xs font-mono text-sky-800 font-bold">
                   <span className="flex items-center gap-1.5">
                     <Radio className="w-3.5 h-3.5 text-sky-700" />
@@ -94,10 +94,10 @@ export const WhyChooseUs: React.FC = () => {
                 <p className="text-[11px] text-slate-600">
                   Continuous highway, airside, and maritime telemetry sync.
                 </p>
-              </div>
+              </div> */}
 
               {/* Floating Card Overlay 2 */}
-              <div className="hidden md:block absolute bottom-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
+              {/* <div className="hidden md:block absolute bottom-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl max-w-xs space-y-1">
                 <div className="flex items-center gap-1.5 text-xs font-mono text-emerald-800 font-bold">
                   <Lock className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Security Protocol</span>
@@ -108,7 +108,7 @@ export const WhyChooseUs: React.FC = () => {
                 <p className="text-[11px] text-slate-600">
                   Unlocking allowed only at designated verified recipient docks.
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Metrics underneath in light mode */}

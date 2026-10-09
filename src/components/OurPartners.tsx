@@ -60,6 +60,27 @@ const PARTNERS = [
     logoColor: "#1a1a1a",
     logoBg: "#FFFFFF",
   },
+  {
+    name: "DP World",
+    trackUrl: "https://www.dpworld.com/",
+    logo: "DP World",
+    logoColor: "#0072B5",
+    logoBg: "#FFFFFF",
+  },
+  {
+    name: "Mahindra",
+    trackUrl: "https://www.mahindralogistics.com/",
+    logo: "Mahindra",
+    logoColor: "#00000",
+    logoBg: "#FFFFFF",
+  },
+  {
+    name: "Trackon",
+    trackUrl: "https://trackon.in/",
+    logo: "Trackon",
+    logoColor: "#",
+    logoBg: "#FFFFFF",
+  },
 ];
 
 function PartnerCard({ partner }: { partner: (typeof PARTNERS)[0] }) {

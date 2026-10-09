@@ -106,7 +106,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription:
       "When market timing is non-negotiable, Shiv Shakti Logistics provides rapid air cargo operations. Leveraging block space agreements with leading commercial air carriers and dedicated freight charters, we bridge national gateways and key international hubs in Dubai, Singapore, Frankfurt, London, and Chicago with guaranteed cut-off windows and expedited customs documentation.",
     iconName: "Plane",
-    heroImage: "/images/aricraft.jpeg",
+    heroImage: "/images/aricraft.png",
     modes: [
       "Next Flight Out (NFO)",
       "Consolidated Air Cargo",
@@ -243,7 +243,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription:
       "Our Grade-A warehousing infrastructure provides high-bay storage, automated racking, barcode/RFID tracking, and climate-controlled zones. Driven by an enterprise Warehouse Management System (WMS), we support batch tracing, FIFO/FEFO inventory turnover, kitting, labeling, and seamless ERP integration.",
     iconName: "Warehouse",
-    heroImage: "/images/shivshaktiwarehouse.jpeg",
+    heroImage: "/images/warehouse.png",
     modes: [
       "Dedicated Contract Warehousing",
       "Multi-Client Shared Facilities",
@@ -311,7 +311,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription:
       "Designed for high-stake shipments where hours dictate business outcomes, Shiv Shakti Express Cargo delivers guaranteed transit times. Backed by dedicated express bypass lines, double-driver long-distance linehauls, and priority airport handovers, your urgent orders move without pause.",
     iconName: "Zap",
-    heroImage: "/images/express_delivary.jpeg",
+    heroImage: "/images/express_delivary.png",
     modes: [
       "Same-Day Metro Express",
       "Next-Day Guaranteed Inter-City",
@@ -378,7 +378,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription:
       "The final mile represents the most customer-visible segment of your supply chain. Shiv Shakti Logistics optimizes urban and regional last-mile delivery using AI-powered route planning, dynamic delivery windows, contactless OTP verification, and an expanding eco-friendly electric vehicle (EV) urban fleet.",
     iconName: "MapPin",
-    heroImage: "/images/optimize.jpeg",
+    heroImage: "/images/optimize.png",
     modes: [
       "B2B Store Replenishment",
       "D2C Direct Doorstep",
@@ -516,7 +516,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription:
       "True supply chain resilience requires strategic engineering. Shiv Shakti Logistics delivers comprehensive Fourth-Party Logistics (4PL) services, acting as the single orchestrator of your vendors, carriers, and fulfillment centers. Using digital twins, predictive lead time analytics, and control tower dashboards, we reduce total logistics cost while elevating delivery reliability.",
     iconName: "Cpu",
-    heroImage: "/images/supplychain.png",
+    heroImage: "/images/shivshaktiwarehouse.png",
     modes: [
       "4PL Logistics Orchestration",
       "Network Design & Facility Location",

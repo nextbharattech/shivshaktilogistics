@@ -54,7 +54,7 @@ export const COMPANY: CompanyInfo = {
     "Shiv Shakti Logistics delivers resilient road freight, high-velocity air cargo, scalable ocean freight, automated warehousing, and intelligent last-mile distribution across domestic and international trade corridors.",
   gst: "09FBDPK4698K1ZW",
   headquarters: {
-    address: "E-119, janakpuri, Sahibabad",
+    address: "E-119, Janakpuri, Sahibabad",
     city: "Ghaziabad",
     state: "Uttar Pradesh",
     country: "India",
@@ -86,7 +86,7 @@ export const COMPANY: CompanyInfo = {
       city: "Ghaziabad",
       state: "Uttar Pradesh",
       type: "Corporate Headquarters",
-      address: "E-119, janakpuri, Sahibabad, Ghaziabad(U.P) - 201005",
+      address: "E-119, Janakpuri, Sahibabad, Ghaziabad(U.P) - 201005",
       phone: "+91 8459335952",
       email: "shivshaktilogistic2026@yahoo.com",
       isPrimary: true,

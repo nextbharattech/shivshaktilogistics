@@ -51,7 +51,7 @@ export const Logo: React.FC<LogoProps> = ({
             </span>
             <span
               className={`font-extrabold tracking-wide ${
-                isDark ? "text-sky-400" : "text-sky-700"
+                isDark ? "text-[#015195]" : "text-[#015195]"
               }`}
             >
               Shakti
@@ -60,7 +60,7 @@ export const Logo: React.FC<LogoProps> = ({
           <div className="flex items-center gap-1.5">
             <span
               className={`text-[9px] uppercase tracking-[0.22em] font-bold ${
-                isDark ? "text-slate-200" : "text-slate-900"
+                isDark ? "text-[#015195]" : "text-[#015195]"
               }`}
             >
               Logistics
