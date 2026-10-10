@@ -42,7 +42,9 @@ export default function ContactPage() {
     <div className="pt-28 pb-24 bg-slate-50 text-slate-900 min-h-screen">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -54,12 +56,12 @@ export default function ContactPage() {
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Connect With Our <br />
-            <span className="text-orange-600">
-              Freight Operations Desk.
-            </span>
+            <span className="text-orange-600">Freight Operations Desk.</span>
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Whether booking urgent factory dispatches, bidding for corporate freight tenders, or connecting with regional gateway managers — our control tower is on call 24 hours a day.
+            Whether booking urgent factory dispatches, bidding for corporate
+            freight tenders, or connecting with regional gateway managers — our
+            control tower is on call 24 hours a day.
           </p>
         </div>
 
@@ -78,9 +80,13 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-medium">Headquarters:</div>
+                    <div className="text-xs text-slate-500 font-medium">
+                      Headquarters:
+                    </div>
                     <div className="text-slate-900 font-semibold mt-0.5">
-                      {COMPANY.headquarters.address}, {COMPANY.headquarters.city}, {COMPANY.headquarters.state} - {COMPANY.headquarters.postalCode}
+                      {COMPANY.headquarters.address},{" "}
+                      {COMPANY.headquarters.city}, {COMPANY.headquarters.state}{" "}
+                      - {COMPANY.headquarters.postalCode}
                     </div>
                   </div>
                 </div>
@@ -90,7 +96,9 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-medium">Dispatch Phone:</div>
+                    <div className="text-xs text-slate-500 font-medium">
+                      Dispatch Phone:
+                    </div>
                     <a
                       href={`tel:${COMPANY.contact.phone.replace(/[^0-9+]/g, "")}`}
                       className="text-slate-900 font-semibold hover:text-sky-700 transition-colors block mt-0.5"
@@ -108,7 +116,9 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-medium">Email Enquiries:</div>
+                    <div className="text-xs text-slate-500 font-medium">
+                      Email Enquiries:
+                    </div>
                     <a
                       href={`mailto:${COMPANY.contact.email}`}
                       className="text-slate-900 font-semibold hover:text-sky-700 transition-colors block mt-0.5"
@@ -126,7 +136,9 @@ export default function ContactPage() {
                     <MessageSquare className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-medium">WhatsApp Priority Desk:</div>
+                    <div className="text-xs text-slate-500 font-medium">
+                      WhatsApp Priority Desk:
+                    </div>
                     <a
                       href={`https://wa.me/${COMPANY.contact.whatsapp.replace(/[^0-9]/g, "")}`}
                       target="_blank"
@@ -143,7 +155,9 @@ export default function ContactPage() {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-medium">Operations Hours:</div>
+                    <div className="text-xs text-slate-500 font-medium">
+                      Operations Hours:
+                    </div>
                     <div className="text-slate-900 font-semibold mt-0.5">
                       {COMPANY.operatingHours}
                     </div>
@@ -190,13 +204,23 @@ export default function ContactPage() {
                   {b.type}
                 </div>
 
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-black-600 leading-relaxed font-bold">
                   {b.address}
                 </p>
 
-                <div className="pt-2 border-t border-slate-100 space-y-1 text-xs font-mono text-slate-500">
-                  <div>Phone: <span className="text-slate-900 font-semibold">{b.phone}</span></div>
-                  <div>Email: <span className="text-sky-700 font-semibold">{b.email}</span></div>
+                <div className="pt-2 border-t border-slate-100 space-y-1 text-xs font-bold text-black-500">
+                  <div>
+                    Phone:{" "}
+                    <span className="text-slate-900 font-semibold">
+                      {b.phone}
+                    </span>
+                  </div>
+                  <div>
+                    Email:{" "}
+                    <span className="text-sky-700 font-semibold">
+                      {b.email}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}

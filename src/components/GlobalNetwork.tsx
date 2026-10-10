@@ -13,12 +13,21 @@ import {
   ShieldCheck,
   Layers,
 } from "lucide-react";
-import { NETWORK_NODES, NETWORK_ROUTES, NetworkNode, NetworkRoute } from "@/data/network";
+import {
+  NETWORK_NODES,
+  NETWORK_ROUTES,
+  NetworkNode,
+  NetworkRoute,
+} from "@/data/network";
 import { COMPANY } from "@/data/company";
 
 export const GlobalNetwork: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState<"all" | "road" | "air" | "ocean">("all");
-  const [selectedNode, setSelectedNode] = useState<NetworkNode | null>(NETWORK_NODES[0]);
+  const [activeFilter, setActiveFilter] = useState<
+    "all" | "road" | "air" | "ocean"
+  >("all");
+  const [selectedNode, setSelectedNode] = useState<NetworkNode | null>(
+    NETWORK_NODES[0],
+  );
 
   const filteredRoutes =
     activeFilter === "all"
@@ -26,7 +35,10 @@ export const GlobalNetwork: React.FC = () => {
       : NETWORK_ROUTES.filter((r) => r.mode === activeFilter);
 
   return (
-    <section id="network" className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200 text-slate-900">
+    <section
+      id="network"
+      className="py-24 bg-slate-50 relative overflow-hidden border-b border-slate-200 text-slate-900"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
@@ -37,12 +49,11 @@ export const GlobalNetwork: React.FC = () => {
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Connected Infrastructure.{" "}
-              <span className="text-orange-600">
-                Every Port & Highway.
-              </span>
+              <span className="text-orange-600">Every Port & Highway.</span>
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              Direct linehauls linking major domestic production centers to key international maritime gateways and air freight hubs.
+              Direct linehauls linking major domestic production centers to key
+              international maritime gateways and air freight hubs.
             </p>
           </div>
 
@@ -68,6 +79,17 @@ export const GlobalNetwork: React.FC = () => {
             >
               <Truck className="w-3.5 h-3.5" />
               <span>Surface Linehauls</span>
+            </button>
+            <button
+              onClick={() => setActiveFilter("ocean")}
+              className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all duration-150 ${
+                activeFilter === "ocean"
+                  ? "bg-sky-700 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              <Anchor className="w-3.5 h-3.5" />
+              <span>Train</span>
             </button>
             <button
               onClick={() => setActiveFilter("ocean")}
@@ -106,7 +128,9 @@ export const GlobalNetwork: React.FC = () => {
                   <span>Interactive Route Canvas</span>
                 </span>
                 <span className="text-slate-300">|</span>
-                <span className="text-xs text-slate-500">Click any waypoint node to inspect facility</span>
+                <span className="text-xs text-slate-500">
+                  Click any waypoint node to inspect facility
+                </span>
               </div>
               <div className="text-[11px] font-mono text-slate-400 hidden sm:block">
                 Mercator Grid / High-Speed Corridors
@@ -124,19 +148,37 @@ export const GlobalNetwork: React.FC = () => {
               >
                 <defs>
                   {/* Road Gradient */}
-                  <linearGradient id="road-lane-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="road-lane-light"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#0284C7" />
                     <stop offset="100%" stopColor="#0369A1" />
                   </linearGradient>
 
                   {/* Ocean Gradient */}
-                  <linearGradient id="ocean-lane-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="ocean-lane-light"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#2563EB" />
                     <stop offset="100%" stopColor="#1D4ED8" />
                   </linearGradient>
 
                   {/* Air Gradient */}
-                  <linearGradient id="air-lane-light" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="air-lane-light"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#EA580C" />
                     <stop offset="100%" stopColor="#F97316" />
                   </linearGradient>
@@ -144,25 +186,33 @@ export const GlobalNetwork: React.FC = () => {
 
                 {/* Connecting Routes */}
                 {filteredRoutes.map((route) => {
-                  const orig = NETWORK_NODES.find((n) => n.id === route.originId);
-                  const dest = NETWORK_NODES.find((n) => n.id === route.destinationId);
+                  const orig = NETWORK_NODES.find(
+                    (n) => n.id === route.originId,
+                  );
+                  const dest = NETWORK_NODES.find(
+                    (n) => n.id === route.destinationId,
+                  );
                   if (!orig || !dest) return null;
 
                   const midX = (orig.coordinates.x + dest.coordinates.x) / 2;
-                  const midY = (orig.coordinates.y + dest.coordinates.y) / 2 - 6;
+                  const midY =
+                    (orig.coordinates.y + dest.coordinates.y) / 2 - 6;
 
                   const strokeColor =
                     route.mode === "air"
                       ? "url(#air-lane-light)"
                       : route.mode === "ocean"
-                      ? "url(#ocean-lane-light)"
-                      : "url(#road-lane-light)";
+                        ? "url(#ocean-lane-light)"
+                        : "url(#road-lane-light)";
 
                   const strokeWidth = route.mode === "road" ? 1.0 : 0.8;
                   const dashPattern = route.mode === "air" ? "1 1" : "2 1";
 
                   return (
-                    <g key={route.id} className="transition-all hover:opacity-100">
+                    <g
+                      key={route.id}
+                      className="transition-all hover:opacity-100"
+                    >
                       <path
                         d={`M ${orig.coordinates.x} ${orig.coordinates.y} Q ${midX} ${midY} ${dest.coordinates.x} ${dest.coordinates.y}`}
                         fill="none"
@@ -226,10 +276,12 @@ export const GlobalNetwork: React.FC = () => {
               {/* Map Legend in light mode */}
               <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-sm text-[10px] font-mono flex items-center gap-3">
                 <span className="flex items-center gap-1 text-sky-800 font-bold">
-                  <span className="w-2 h-2 rounded-full bg-sky-600" /> Domestic Hub
+                  <span className="w-2 h-2 rounded-full bg-sky-600" /> Domestic
+                  Hub
                 </span>
                 <span className="flex items-center gap-1 text-orange-700 font-bold">
-                  <span className="w-2 h-2 rounded-full bg-orange-600" /> Global Gateway
+                  <span className="w-2 h-2 rounded-full bg-orange-600" /> Global
+                  Gateway
                 </span>
                 <span className="flex items-center gap-1 text-blue-700 font-bold">
                   <span className="w-3 h-0.5 bg-blue-600" /> Ocean / Sea Lane
@@ -257,7 +309,10 @@ export const GlobalNetwork: React.FC = () => {
                     {selectedNode.name}
                   </h3>
                   <div className="text-xs text-slate-500 mt-0.5 font-medium">
-                    Territory: <strong className="text-slate-800">{selectedNode.country}</strong>
+                    Territory:{" "}
+                    <strong className="text-slate-800">
+                      {selectedNode.country}
+                    </strong>
                   </div>
                 </div>
 
@@ -286,7 +341,9 @@ export const GlobalNetwork: React.FC = () => {
                   </div>
                   <div className="space-y-1.5">
                     {NETWORK_ROUTES.filter(
-                      (r) => r.originId === selectedNode.id || r.destinationId === selectedNode.id
+                      (r) =>
+                        r.originId === selectedNode.id ||
+                        r.destinationId === selectedNode.id,
                     )
                       .slice(0, 3)
                       .map((r) => (
@@ -294,7 +351,9 @@ export const GlobalNetwork: React.FC = () => {
                           key={r.id}
                           className="text-[11px] text-slate-700 p-2 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between"
                         >
-                          <span className="truncate pr-2 font-medium">{r.name}</span>
+                          <span className="truncate pr-2 font-medium">
+                            {r.name}
+                          </span>
                           <span className="text-sky-700 font-mono font-bold flex-shrink-0">
                             {r.transitTime}
                           </span>
@@ -306,24 +365,33 @@ export const GlobalNetwork: React.FC = () => {
             ) : null}
 
             {/* Network Infrastructure Summary */}
-            <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+            {/* <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
               <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                 Enterprise Linehaul Allocation
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Dedicated container fleets, reefer linehauls, and commercial air cargo capacity deployed across 48+ primary hubs.
+                Dedicated container fleets, reefer linehauls, and commercial air
+                cargo capacity deployed across 48+ primary hubs.
               </p>
               <div className="grid grid-cols-2 gap-2 text-center pt-1 font-mono text-xs">
                 <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                  <div className="font-bold text-slate-900">{COMPANY.metrics.fleetPartners}</div>
-                  <div className="text-[10px] text-slate-500 font-medium">Fleet Partners</div>
+                  <div className="font-bold text-slate-900">
+                    {COMPANY.metrics.fleetPartners}
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-medium">
+                    Fleet Partners
+                  </div>
                 </div>
                 <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                  <div className="font-bold text-sky-700">{COMPANY.metrics.activeRoutes}</div>
-                  <div className="text-[10px] text-slate-500 font-medium">Route Corridors</div>
+                  <div className="font-bold text-sky-700">
+                    {COMPANY.metrics.activeRoutes}
+                  </div>
+                  <div className="text-[10px] text-slate-500 font-medium">
+                    Route Corridors
+                  </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

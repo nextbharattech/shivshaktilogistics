@@ -21,12 +21,12 @@ export default function NetworkPage() {
           </div>
           <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Our Trade Corridors &{" "}
-            <span className="text-orange-600">
-              Logistics Network.
-            </span>
+            <span className="text-orange-600">Logistics Network.</span>
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Connecting industrial manufacturing centers, key inland container depots (ICDs), major sea ports like JNPT and Mundra, and major airport air cargo complexes.
+            Connecting industrial manufacturing centers, key inland container
+            depots (ICDs), major sea ports like JNPT and Mundra, and major
+            airport air cargo complexes.
           </p>
         </div>
       </div>
@@ -59,11 +59,12 @@ export default function NetworkPage() {
               <div className="text-xs text-orange-600 font-semibold font-mono">
                 {b.type}
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-black-600 leading-relaxed font-bold">
                 {b.address}
               </p>
-              <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-mono">
-                Direct Dispatch: <span className="text-slate-900 font-semibold">{b.phone}</span>
+              <div className="pt-2 border-t border-slate-100 text-[11px] text-black-500 font-bold">
+                Phone:{" "}
+                <span className="text-slate-900 font-semibold">{b.phone}</span>
               </div>
             </div>
           ))}
