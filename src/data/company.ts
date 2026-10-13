@@ -51,7 +51,7 @@ export const COMPANY: CompanyInfo = {
   shortDescription:
     "End-to-end multi-modal logistics, freight forwarding, and intelligent supply-chain infrastructure built for speed, complete visibility, and unmatched reliability.",
   fullDescription:
-    "Shiv Shakti Logistics delivers resilient road freight, high-velocity air cargo, scalable ocean freight, automated warehousing, and intelligent last-mile distribution across domestic and international trade corridors.",
+    "Shiv Shakti Logistics delivers resilient road freight, dedicated Indian Railways rail cargo, high-velocity air cargo, scalable ocean freight, automated warehousing, and intelligent last-mile distribution across domestic and international trade corridors.",
   gst: "09FBDPK4698K1ZW",
   headquarters: {
     address: "E-119, Janakpuri, Sahibabad",

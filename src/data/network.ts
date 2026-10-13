@@ -12,7 +12,7 @@ export interface NetworkNode {
 export interface NetworkRoute {
   id: string;
   name: string;
-  mode: "road" | "air" | "ocean";
+  mode: "road" | "air" | "ocean" | "rail";
   originId: string;
   destinationId: string;
   transitTime: string;
@@ -28,7 +28,7 @@ export const NETWORK_NODES: NetworkNode[] = [
     category: "Domestic Gateway",
     coordinates: { x: 67, y: 39 },
     country: "India",
-    capabilities: ["Automated Sorting Hub", "Customs Bonded ICD", "Fleet Dispatch Yard", "Air Cargo Complex"],
+    capabilities: ["Automated Sorting Hub", "Customs Bonded ICD", "Dedicated Freight Corridor (WDFC/EDFC)", "Fleet Dispatch Yard", "Air Cargo Complex"],
     status: "Operational 24/7",
   },
   {
@@ -38,7 +38,7 @@ export const NETWORK_NODES: NetworkNode[] = [
     category: "Maritime Port",
     coordinates: { x: 65, y: 44 },
     country: "India",
-    capabilities: ["Deep-Sea Container Terminal", "CFS Warehousing", "Coastal Rail Siding", "Reefer Yard"],
+    capabilities: ["Deep-Sea Container Terminal", "JNPT Rail Siding (Port CTO)", "CFS Warehousing", "Reefer Yard"],
     status: "Operational 24/7",
   },
   {
@@ -48,7 +48,7 @@ export const NETWORK_NODES: NetworkNode[] = [
     category: "Maritime Port",
     coordinates: { x: 63, y: 41 },
     country: "India",
-    capabilities: ["Direct FCL Ocean Services", "Double-Stack Container Rail", "Liquid & Dry Cargo"],
+    capabilities: ["Direct FCL Ocean Services", "Double-Stack Container Rail", "DFC Direct Link", "Liquid & Dry Cargo"],
     status: "Operational 24/7",
   },
   {
@@ -248,5 +248,57 @@ export const NETWORK_ROUTES: NetworkRoute[] = [
     transitTime: "16 Hours Transit / 36h Clearance",
     frequency: "5 Flights Weekly",
     corridorType: "Trans-Atlantic Cargo Link",
+  },
+
+  // Indian Railways Dedicated Freight Corridors (DFC) & Intermodal Rail
+  {
+    id: "r-rail-1",
+    name: "Western DFC: Dadri (Delhi NCR) ⇄ Mundra Port",
+    mode: "rail",
+    originId: "delhi",
+    destinationId: "mundra",
+    transitTime: "18-22 Hours",
+    frequency: "Daily Double-Stack Container Rakes",
+    corridorType: "Western Dedicated Freight Corridor (WDFC)",
+  },
+  {
+    id: "r-rail-2",
+    name: "Western DFC: Delhi NCR ⇄ JNPT Mumbai Port",
+    mode: "rail",
+    originId: "delhi",
+    destinationId: "mumbai",
+    transitTime: "20-24 Hours",
+    frequency: "Scheduled Heavy-Haul Daily Departures",
+    corridorType: "High-Speed Rail Freight Corridor",
+  },
+  {
+    id: "r-rail-3",
+    name: "Eastern DFC: Delhi NCR ⇄ Kolkata Dankuni Hub",
+    mode: "rail",
+    originId: "delhi",
+    destinationId: "kolkata",
+    transitTime: "22-26 Hours",
+    frequency: "Daily Bulk & Parcel Cargo Trains",
+    corridorType: "Eastern Dedicated Freight Corridor (EDFC)",
+  },
+  {
+    id: "r-rail-4",
+    name: "Golden Quadrilateral: Mumbai ⇄ Bengaluru Rail Line",
+    mode: "rail",
+    originId: "mumbai",
+    destinationId: "bengaluru",
+    transitTime: "24-28 Hours",
+    frequency: "Scheduled Parcel Cargo Express (PCET)",
+    corridorType: "Intermodal Container Rail",
+  },
+  {
+    id: "r-rail-5",
+    name: "Southern Auto-Rail: Chennai ⇄ Bengaluru Corridor",
+    mode: "rail",
+    originId: "chennai",
+    destinationId: "bengaluru",
+    transitTime: "8-10 Hours",
+    frequency: "Daily Scheduled Auto & Container Rakes",
+    corridorType: "Automotive Bi-Level Rail Line",
   },
 ];

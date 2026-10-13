@@ -231,8 +231,77 @@ export const SERVICES: ServiceItem[] = [
     ],
   },
   {
-    id: "warehousing",
+    id: "rail-freight",
     number: "04",
+    slug: "rail-freight",
+    title: "Indian Railways (IR) & Multimodal Rail Freight",
+    shortTitle: "Indian Rail Freight",
+    tagline:
+      "High-capacity container rakes, Dedicated Freight Corridors (DFC), and scheduled parcel cargo express.",
+    shortDescription:
+      "Nationwide rail logistics leveraging Indian Railways network, Dedicated Freight Corridors (WDFC & EDFC), full rake container movements, leased parcel express, and seamless ICD connectivity.",
+    fullDescription:
+      "Shiv Shakti Logistics harnesses the power and scale of the Indian Railways network and Dedicated Freight Corridors (DFC) to deliver high-volume, cost-efficient, and sustainable cargo transit. From full rake booking and leased Parcel Cargo Express Trains (PCET) to containerized intermodal movements connecting major Inland Container Depots (ICDs) and seaports (Mundra, Pipavav, JNPT), our rail freight operations are backed by end-to-end first-and-last-mile trucking, round-the-clock CRIS/FOIS tracking, and single-window documentation.",
+    iconName: "Train",
+    heroImage: "/images/train_cargo.png",
+    modes: [
+      "Dedicated Freight Corridors (WDFC/EDFC)",
+      "Full Rake & BCN / BOXN Wagons",
+      "Leased Parcel Express (PCET / VPUs)",
+      "Container Rail (CONCOR & Private CTO)",
+      "ICD Multimodal Drayage & Sidings",
+    ],
+    keyHighlights: [
+      "High-speed transit on Western & Eastern Dedicated Freight Corridors (DFC) cutting transit times by up to 50%",
+      "Scheduled time-tabled Parcel Cargo Express Trains (PCET) for high-urgency commercial shipments",
+      "End-to-end multimodal connectivity: first-mile pickup, rail transit, and last-mile trailer delivery",
+      "Real-time CRIS / FOIS integration with live FNR wagon milestone telemetry and digital Railway Receipts (e-RR)",
+    ],
+    capabilities: [
+      {
+        title: "Full Rake & Bulk Wagon Transportation",
+        description:
+          "Dedicated sidings and complete rake allocations for industrial steel, cement, heavy machinery, minerals, fertilizers, and agricultural commodities.",
+      },
+      {
+        title: "Dedicated Freight Corridor (DFC) Operations",
+        description:
+          "High-throughput double-stack container rakes operating on heavy-haul DFC tracks connecting Northern industrial clusters (Dadri, Rewari) directly with Western ports.",
+      },
+      {
+        title: "Parcel Cargo Express Trains (PCET)",
+        description:
+          "Guaranteed space allocations in leased VPUs and time-tabled parcel trains running on Golden Quadrilateral rail corridors for time-sensitive commercial packages.",
+      },
+      {
+        title: "Inland Container Depot (ICD) Integration",
+        description:
+          "Bonded and domestic rail container haulage linking hinterland ICD dry ports to gateway maritime container terminals with customs escort clearance.",
+      },
+    ],
+    operationalSpecs: {
+      coverage:
+        "Pan-India Indian Railways Network spanning 68+ Railway Divisions, DFC Arterials & 45+ ICD Rail Sidings",
+      fleetOptions:
+        "BLCA/BLCB Container Flats, BCNHL Covered Wagons, BOXNHL Open Wagons, VPUs, High-Speed Parcel Vans",
+      leadTimes:
+        "24-36 Hours across major Golden Quadrilateral rail corridors with scheduled green-channel right-of-way",
+      trackingPrecision:
+        "CRIS / FOIS satellite-linked milestone tracking, FNR/RR consignment queries & junction arrival alerts",
+      compliance:
+        "Indian Railways Act 1989 compliant, Railway Claims Tribunal (RCT) verified, comprehensive rail transit insurance",
+    },
+    suitableFor: [
+      "Heavy Industrial Cargo, Steel Coils & Infrastructure Materials",
+      "Automotive Vehicles (NMG & BCACBM bi-level rakes)",
+      "Bulk FMCG, Foodgrains & Agro Commodities",
+      "Exim Containerized Cargo (20ft & 40ft High-Cube boxes)",
+      "High-Volume E-Commerce & Retail Parcel Consignments",
+    ],
+  },
+  {
+    id: "warehousing",
+    number: "05",
     slug: "warehousing",
     title: "Grade-A Automated Warehousing & Distribution",
     shortTitle: "Warehousing",
@@ -300,7 +369,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "express-delivery",
-    number: "05",
+    number: "06",
     slug: "express-delivery",
     title: "High-Priority Express & Time-Definite Freight",
     shortTitle: "Express Delivery",
@@ -367,7 +436,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "last-mile-delivery",
-    number: "06",
+    number: "07",
     slug: "last-mile-delivery",
     title: "Urban & Regional Last-Mile Distribution",
     shortTitle: "Last-Mile Delivery",
@@ -435,7 +504,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "freight-forwarding",
-    number: "07",
+    number: "08",
     slug: "freight-forwarding",
     title: "International Freight Forwarding & Customs Brokerage",
     shortTitle: "Freight Forwarding",
@@ -505,7 +574,7 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "supply-chain-management",
-    number: "08",
+    number: "09",
     slug: "supply-chain-management",
     title: "End-to-End Enterprise Supply Chain Engineering",
     shortTitle: "Supply Chain Solutions",

@@ -17,6 +17,7 @@ import {
   MapPin,
   Cpu,
   Layers,
+  Train,
 } from "lucide-react";
 import { Logo } from "./Logo";
 import { SERVICES } from "@/data/services";
@@ -129,7 +130,7 @@ export const Navbar: React.FC = () => {
                                 href="/services"
                                 className="text-xs font-semibold text-sky-700 hover:text-sky-800 inline-flex items-center gap-1"
                               >
-                                View All 8 Services{" "}
+                                View All 9 Services{" "}
                                 <ArrowRight className="w-3 h-3" />
                               </Link>
                             </div>
@@ -150,6 +151,9 @@ export const Navbar: React.FC = () => {
                                     )}
                                     {srv.id === "ocean-freight" && (
                                       <Ship className="w-4 h-4" />
+                                    )}
+                                    {srv.id === "rail-freight" && (
+                                      <Train className="w-4 h-4" />
                                     )}
                                     {srv.id === "warehousing" && (
                                       <Warehouse className="w-4 h-4" />
@@ -320,7 +324,7 @@ export const Navbar: React.FC = () => {
                   href="/services"
                   className="block px-3 py-2.5 text-base font-semibold text-slate-800 hover:text-sky-700 rounded-lg hover:bg-slate-50"
                 >
-                  Services (8 Core Modes)
+                  Services (9 Core Modes)
                 </Link>
                 <Link
                   href="/industries"

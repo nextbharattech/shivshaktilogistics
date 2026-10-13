@@ -1,14 +1,14 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Truck, Plane, Ship, Warehouse, Zap, MapPin, Globe, Cpu, Layers } from "lucide-react";
+import { ArrowRight, CheckCircle2, Truck, Plane, Ship, Warehouse, Zap, MapPin, Globe, Cpu, Layers, Train } from "lucide-react";
 import { SERVICES } from "@/data/services";
 import { ServiceSchema } from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Multi-Modal Freight & Logistics Services",
   description:
-    "Explore Shiv Shakti Logistics 8 core disciplines: Road Freight FTL, Express Air Cargo, Ocean Container Shipping, Grade-A Warehousing, Last-Mile, and 4PL Supply Chain Management.",
+    "Explore Shiv Shakti Logistics 9 core disciplines: Road Freight FTL, Indian Railways Rail Cargo, Express Air Cargo, Ocean Container Shipping, Grade-A Warehousing, Last-Mile, and 4PL Supply Chain Management.",
 };
 
 export default function ServicesPage() {
@@ -21,6 +21,7 @@ export default function ServicesPage() {
     MapPin,
     Globe,
     Cpu,
+    Train,
   };
 
   return (
@@ -40,7 +41,7 @@ export default function ServicesPage() {
             </span>
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            From high-density highway linehauls to temperature-controlled air cargo charters and ocean container shipping, Shiv Shakti Logistics synchronizes every leg under single-contract accountability.
+            From high-density highway linehauls and Indian Railways Dedicated Freight Corridors (DFC) to temperature-controlled air cargo charters and ocean container shipping, Shiv Shakti Logistics synchronizes every leg under single-contract accountability.
           </p>
         </div>
 

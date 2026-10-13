@@ -14,6 +14,7 @@ import {
   MapPin,
   Globe,
   Cpu,
+  Train,
   Clock,
   ChevronRight,
   FileCheck,
@@ -68,6 +69,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     MapPin,
     Globe,
     Cpu,
+    Train,
   };
 
   const Icon = iconMap[service.iconName] || Truck;

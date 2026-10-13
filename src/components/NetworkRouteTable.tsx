@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Truck, Anchor, Plane, ChevronDown, ChevronUp } from "lucide-react";
+import { Truck, Anchor, Plane, Train, ChevronDown, ChevronUp } from "lucide-react";
 import { NetworkRoute } from "@/data/network";
 
 const MODE_CONFIG = {
@@ -10,6 +10,12 @@ const MODE_CONFIG = {
     label: "Surface",
     color: "bg-sky-50 text-sky-700 border-sky-200",
     dot: "bg-sky-500",
+  },
+  rail: {
+    icon: Train,
+    label: "Rail (DFC)",
+    color: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    dot: "bg-emerald-500",
   },
   ocean: {
     icon: Anchor,
@@ -30,7 +36,7 @@ interface Props {
 }
 
 export const NetworkRouteTable: React.FC<Props> = ({ routes }) => {
-  const [filter, setFilter] = useState<"all" | "road" | "ocean" | "air">("all");
+  const [filter, setFilter] = useState<"all" | "road" | "rail" | "ocean" | "air">("all");
   const [expanded, setExpanded] = useState<string | null>(null);
 
   const filtered = filter === "all" ? routes : routes.filter((r) => r.mode === filter);
@@ -38,6 +44,7 @@ export const NetworkRouteTable: React.FC<Props> = ({ routes }) => {
   const counts = {
     all: routes.length,
     road: routes.filter((r) => r.mode === "road").length,
+    rail: routes.filter((r) => r.mode === "rail").length,
     ocean: routes.filter((r) => r.mode === "ocean").length,
     air: routes.filter((r) => r.mode === "air").length,
   };
@@ -46,9 +53,9 @@ export const NetworkRouteTable: React.FC<Props> = ({ routes }) => {
     <div>
       {/* Filter tabs */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {(["all", "road", "ocean", "air"] as const).map((f) => {
+        {(["all", "road", "rail", "ocean", "air"] as const).map((f) => {
           const Icon =
-            f === "road" ? Truck : f === "ocean" ? Anchor : f === "air" ? Plane : null;
+            f === "road" ? Truck : f === "rail" ? Train : f === "ocean" ? Anchor : f === "air" ? Plane : null;
           return (
             <button
               key={f}
@@ -60,7 +67,7 @@ export const NetworkRouteTable: React.FC<Props> = ({ routes }) => {
               }`}
             >
               {Icon && <Icon className="w-3.5 h-3.5" />}
-              <span className="capitalize">{f === "all" ? "All Routes" : f === "road" ? "Surface" : f === "ocean" ? "Ocean" : "Air"}</span>
+              <span className="capitalize">{f === "all" ? "All Routes" : f === "road" ? "Surface" : f === "rail" ? "Rail (DFC)" : f === "ocean" ? "Ocean" : "Air"}</span>
               <span
                 className={`text-[11px] font-mono px-1.5 py-0.5 rounded-full ${
                   filter === f ? "bg-white/20 text-white" : "bg-slate-100 text-slate-500"

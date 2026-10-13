@@ -6,6 +6,7 @@ import {
   Anchor,
   Plane,
   Truck,
+  Train,
   Building2,
   Navigation,
   Compass,
@@ -23,7 +24,7 @@ import { COMPANY } from "@/data/company";
 
 export const GlobalNetwork: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<
-    "all" | "road" | "air" | "ocean"
+    "all" | "road" | "rail" | "ocean" | "air"
   >("all");
   const [selectedNode, setSelectedNode] = useState<NetworkNode | null>(
     NETWORK_NODES[0],
@@ -49,11 +50,11 @@ export const GlobalNetwork: React.FC = () => {
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Connected Infrastructure.{" "}
-              <span className="text-orange-600">Every Port & Highway.</span>
+              <span className="text-orange-600">Every Port, Highway & Rail.</span>
             </h2>
             <p className="mt-4 text-base text-slate-600">
-              Direct linehauls linking major domestic production centers to key
-              international maritime gateways and air freight hubs.
+              Direct linehauls, Dedicated Freight Corridors (DFC), and maritime sea lanes linking major domestic production centers to key
+              international gateways and air freight hubs.
             </p>
           </div>
 
@@ -81,15 +82,15 @@ export const GlobalNetwork: React.FC = () => {
               <span>Surface Linehauls</span>
             </button>
             <button
-              onClick={() => setActiveFilter("ocean")}
+              onClick={() => setActiveFilter("rail")}
               className={`px-3.5 py-2 text-xs font-bold rounded-xl flex items-center gap-1.5 transition-all duration-150 ${
-                activeFilter === "ocean"
-                  ? "bg-sky-700 text-white shadow-sm"
+                activeFilter === "rail"
+                  ? "bg-emerald-700 text-white shadow-sm"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <Anchor className="w-3.5 h-3.5" />
-              <span>Train</span>
+              <Train className="w-3.5 h-3.5" />
+              <span>Rail Freight (DFC)</span>
             </button>
             <button
               onClick={() => setActiveFilter("ocean")}
@@ -159,6 +160,18 @@ export const GlobalNetwork: React.FC = () => {
                     <stop offset="100%" stopColor="#0369A1" />
                   </linearGradient>
 
+                  {/* Rail Gradient */}
+                  <linearGradient
+                    id="rail-lane-light"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#16A34A" />
+                    <stop offset="100%" stopColor="#059669" />
+                  </linearGradient>
+
                   {/* Ocean Gradient */}
                   <linearGradient
                     id="ocean-lane-light"
@@ -203,10 +216,18 @@ export const GlobalNetwork: React.FC = () => {
                       ? "url(#air-lane-light)"
                       : route.mode === "ocean"
                         ? "url(#ocean-lane-light)"
-                        : "url(#road-lane-light)";
+                        : route.mode === "rail"
+                          ? "url(#rail-lane-light)"
+                          : "url(#road-lane-light)";
 
-                  const strokeWidth = route.mode === "road" ? 1.0 : 0.8;
-                  const dashPattern = route.mode === "air" ? "1 1" : "2 1";
+                  const strokeWidth =
+                    route.mode === "rail" ? 1.3 : route.mode === "road" ? 1.0 : 0.8;
+                  const dashPattern =
+                    route.mode === "air"
+                      ? "1 1"
+                      : route.mode === "rail"
+                        ? "2 1"
+                        : "2 1";
 
                   return (
                     <g
@@ -274,7 +295,7 @@ export const GlobalNetwork: React.FC = () => {
               </svg>
 
               {/* Map Legend in light mode */}
-              <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-sm text-[10px] font-mono flex items-center gap-3">
+              <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-white/95 border border-slate-200 shadow-sm text-[10px] font-mono flex flex-wrap items-center gap-3">
                 <span className="flex items-center gap-1 text-sky-800 font-bold">
                   <span className="w-2 h-2 rounded-full bg-sky-600" /> Domestic
                   Hub
@@ -282,6 +303,9 @@ export const GlobalNetwork: React.FC = () => {
                 <span className="flex items-center gap-1 text-orange-700 font-bold">
                   <span className="w-2 h-2 rounded-full bg-orange-600" /> Global
                   Gateway
+                </span>
+                <span className="flex items-center gap-1 text-emerald-700 font-bold">
+                  <span className="w-3 h-0.5 bg-emerald-600" /> Rail / DFC Corridor
                 </span>
                 <span className="flex items-center gap-1 text-blue-700 font-bold">
                   <span className="w-3 h-0.5 bg-blue-600" /> Ocean / Sea Lane

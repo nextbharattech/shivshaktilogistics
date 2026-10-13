@@ -139,10 +139,21 @@ export const WhyChooseUs: React.FC = () => {
                 <Shield className="w-3.5 h-3.5 text-sky-700" />
                 <span>About Us</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                Shiv Shakti Logistics Pvt Ltd
+              {/* <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                <span className="text-orange-600 text-2xl">Shiv</span>
+                Shakti Logistics Pvt Ltd
                 <br />
                 <span className="text-orange-600 text-2xl">
+                  Your Trusted Logistics Partner.
+                </span>
+              </h2> */}
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-blue-900 tracking-tight leading-tight">
+                <span className="text-orange-600 text-2xl sm:text-4xl mr-2">
+                  Shiv
+                </span>
+                Shakti Logistics Pvt Ltd
+                <br />
+                <span className="text-slate-900 text-2xl">
                   Your Trusted Logistics Partner.
                 </span>
               </h2>

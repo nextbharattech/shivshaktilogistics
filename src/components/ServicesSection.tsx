@@ -11,6 +11,7 @@ import {
   MapPin,
   Globe,
   Cpu,
+  Train,
   ArrowRight,
   CheckCircle2,
   Layers,
@@ -29,13 +30,14 @@ export const ServicesSection: React.FC = () => {
     MapPin,
     Globe,
     Cpu,
+    Train,
   };
 
   const filteredServices =
     selectedFilter === "all"
       ? SERVICES
       : SERVICES.filter((s) => {
-          if (selectedFilter === "surface") return s.id.includes("road") || s.id.includes("express") || s.id.includes("last-mile");
+          if (selectedFilter === "surface") return s.id.includes("road") || s.id.includes("rail") || s.id.includes("express") || s.id.includes("last-mile");
           if (selectedFilter === "global") return s.id.includes("air") || s.id.includes("ocean") || s.id.includes("freight-forwarding");
           if (selectedFilter === "enterprise") return s.id.includes("warehousing") || s.id.includes("supply-chain");
           return true;
@@ -58,7 +60,7 @@ export const ServicesSection: React.FC = () => {
               </span>
             </h2>
             <p className="mt-4 text-base sm:text-lg text-slate-600">
-              Eight comprehensive logistics disciplines harmonized under a single SLA and unified operational accountability.
+              Nine comprehensive logistics disciplines harmonized under a single SLA and unified operational accountability.
             </p>
           </div>
 
@@ -72,7 +74,7 @@ export const ServicesSection: React.FC = () => {
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              All Services (8)
+              All Services ({SERVICES.length})
             </button>
             <button
               onClick={() => setSelectedFilter("surface")}
