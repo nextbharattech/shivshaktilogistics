@@ -228,12 +228,32 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Quick Links & Resources (without tracking) */}
+          {/* Quick Links & Resources */}
           <div className="space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-widest text-white border-l-2 border-sky-400 pl-2">
-              Resources
+              Resources & Tracking
             </h3>
             <ul className="space-y-2.5 text-xs">
+              <li>
+                <Link
+                  href="/track"
+                  className="hover:text-white transition-colors text-sky-400 font-semibold inline-flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Live Shipment Tracking
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/portal/login"
+                  className="hover:text-white transition-colors text-amber-400 font-medium inline-flex items-center gap-1.5"
+                >
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                  </svg>
+                  Staff Docket Portal
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/quote"
@@ -330,6 +350,21 @@ export const Footer: React.FC = () => {
               className="hover:text-white transition-colors"
             >
               Branch Offices
+            </Link>
+            <Link
+              href="/track"
+              className="hover:text-sky-400 transition-colors"
+            >
+              Live Tracking
+            </Link>
+            <Link
+              href="/portal/login"
+              className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all border border-slate-700/60 inline-flex items-center gap-1.5"
+            >
+              <svg className="w-3 h-3 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+              <span>Staff Login</span>
             </Link>
             <Link
               href="/sitemap.xml"

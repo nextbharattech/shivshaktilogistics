@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { MobileQuickBar } from "@/components/MobileQuickBar";
 import { OrganizationSchema } from "@/components/StructuredData";
 import { COMPANY } from "@/data/company";
 
@@ -24,7 +21,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://shivshaktilogistics.com"),
   title: {
-    default: "Shiv Shakti Logistics | Global Freight & Multimodal Supply Chain Infrastructure",
+    default:
+      "Shiv Shakti Logistics | Global Freight & Multimodal Supply Chain Infrastructure",
     template: "%s | Shiv Shakti Logistics",
   },
   description:
@@ -89,6 +87,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { AppProviders } from "@/components/AppProviders";
+import { SiteLayoutWrapper } from "@/components/SiteLayoutWrapper";
+
 export default function RootLayout({
   children,
 }: {
@@ -102,10 +103,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/logo.png" />
       </head>
       <body className="bg-white text-slate-900 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-500 selection:text-white">
-        <Navbar />
-        <main className="flex-1 pb-16 lg:pb-0">{children}</main>
-        <Footer />
-        <MobileQuickBar />
+        <AppProviders>
+          <SiteLayoutWrapper>{children}</SiteLayoutWrapper>
+        </AppProviders>
       </body>
     </html>
   );

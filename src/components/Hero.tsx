@@ -1,18 +1,33 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   ShieldCheck,
   PhoneCall,
   Layers,
   ChevronDown,
+  Truck,
+  Train,
+  Plane,
+  Ship,
+  Search,
 } from "lucide-react";
 import { COMPANY } from "@/data/company";
 
 export const Hero: React.FC = () => {
+  const router = useRouter();
+  const [awbQuery, setAwbQuery] = useState("");
   const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handleTrackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = awbQuery.trim();
+    if (!trimmed) return;
+    router.push(`/track?awb=${encodeURIComponent(trimmed)}`);
+  };
 
   React.useEffect(() => {
     if (videoRef.current) {
@@ -63,12 +78,75 @@ export const Hero: React.FC = () => {
         {/* BOTTOM — Hero Content */}
         <div className="w-full mt-auto pt-8">
           <div className="max-w-4xl mx-auto w-full text-center space-y-3 sm:space-y-4">
+            {/* Multi-Modal Modes Pills including By Train */}
+            {/* <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-2xl mx-auto px-2">
+              <Link
+                href="/services/road-freight"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white/90 hover:bg-white text-slate-800 text-[11px] sm:text-xs font-semibold backdrop-blur-md border border-white/60 shadow-sm hover:border-orange-300 hover:scale-105 transition-all duration-150"
+              >
+                <Truck className="w-3.5 h-3.5 text-orange-600" />
+                <span>By Road</span>
+              </Link>
+
+              <Link
+                href="/services/rail-freight"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-emerald-600/95 hover:bg-emerald-600 text-white text-[11px] sm:text-xs font-bold backdrop-blur-md border border-emerald-400/80 shadow-md shadow-emerald-950/20 hover:scale-105 transition-all duration-150"
+              >
+                <Train className="w-3.5 h-3.5 text-white" />
+                <span>By Train (Rail DFC)</span>
+              </Link>
+
+              <Link
+                href="/services/air-freight"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white/90 hover:bg-white text-slate-800 text-[11px] sm:text-xs font-semibold backdrop-blur-md border border-white/60 shadow-sm hover:border-sky-300 hover:scale-105 transition-all duration-150"
+              >
+                <Plane className="w-3.5 h-3.5 text-sky-600" />
+                <span>By Air</span>
+              </Link>
+
+              <Link
+                href="/services/ocean-freight"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-1.5 rounded-full bg-white/90 hover:bg-white text-slate-800 text-[11px] sm:text-xs font-semibold backdrop-blur-md border border-white/60 shadow-sm hover:border-blue-300 hover:scale-105 transition-all duration-150"
+              >
+                <Ship className="w-3.5 h-3.5 text-blue-600" />
+                <span>By Ocean</span>
+              </Link>
+            </div> */}
+
             {/* Description */}
             <p className="text-sm sm:text-lg lg:text-xl text-white font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm px-2">
+              {/* End-to-end multi-modal logistics solutions — by road, by train, by
+              air, and by ocean — built for speed, complete visibility, and
+              rock-solid reliability. */}
+              {/* End-to-end multi-modal logistics solutions built for speed, complete visibility, and rock-solid reliability — from first mile to final delivery. */}
               End-to-end multi-modal logistics solutions built for speed,
-              complete visibility, and rock-solid reliability — from first mile
-              to final delivery.
+              complete visibility.
             </p>
+
+            {/* Live Shipment Tracking Bar */}
+            <form
+              onSubmit={handleTrackSubmit}
+              className="max-w-md mx-auto w-full pt-1"
+            >
+              <div className="flex items-center bg-white/95 backdrop-blur-md rounded-xl p-1 border border-slate-200/90 shadow-sm focus-within:border-slate-400 transition-colors">
+                <div className="pl-3 pr-2 text-slate-400">
+                  <Search className="w-4 h-4" />
+                </div>
+                <input
+                  type="text"
+                  value={awbQuery}
+                  onChange={(e) => setAwbQuery(e.target.value)}
+                  placeholder="Track AWB / Docket No."
+                  className="flex-1 bg-transparent text-slate-800 placeholder:text-slate-400 text-xs sm:text-sm font-mono py-2 px-1 focus:outline-none min-w-0"
+                />
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-lg bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white text-xs font-bold tracking-wide transition-all whitespace-nowrap cursor-pointer"
+                >
+                  Track
+                </button>
+              </div>
+            </form>
 
             {/* Buttons */}
             <div className="pt-1 flex flex-row items-center justify-center gap-2.5 sm:gap-4 max-w-md mx-auto">
